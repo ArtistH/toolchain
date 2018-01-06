@@ -56,15 +56,15 @@
     0.01      0.000111         111         1    textdomain
     ------ ----------- ----------- --------- --------------------
     100.00    0.793099                  3065 total
- 
-    注: 
+
+    注:
     使用-c选项, ltrace输出由进程创建的库调用, 输出结果以调用过程的时间为准进行排序. 
     因为是从urandom设备上读, 这是一种产生随机数的设备, 完成后写入null设备, 所以读过程花费了较多的时间.  
     使用ltrace去捕获运行时函数, 就好像在进程上系上了一个调试工具, 它占据了ltrace大量的时间, 这里ltrace一共消耗了0.79秒.  
- 
+
     我们再来看一下strace所花费的时间, 如下: 
     strace -c dd if=/dev/urandom of=/dev/null count=1000    
-	1000+0 records in   
+    1000+0 records in   
     1000+0 records out  
     512000 bytes (512 kB, 500 KiB) copied, 0.324057 s, 1.6 MB/s 
     % time     seconds  usecs/call     calls    errors syscall
