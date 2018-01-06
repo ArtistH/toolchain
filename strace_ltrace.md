@@ -15,130 +15,93 @@
     1000+0 records in   
     1000+0 records out  
     512000 bytes (512 kB) copied, 2.31346 seconds, 221 kB/s 
-    % time     seconds  usecs/call     calls      function
+    % time     seconds  usecs/call     calls    function
     ------ ----------- ----------- --------- --------------------
-    37.03    0.293652         293      1000 read
-    34.89    0.276706         276      1000 write
-    22.45    0.178077         178      1000 memcpy
-  1.61    0.012749        6374         2 __fprintf_chk
-  0.90    0.007102        7102         1 __overflow
-  0.65    0.005148        2574         2 dcgettext
-  0.38    0.002978        1489         2 clock_gettime
-  0.34    0.002720         272        10 strlen
-  0.26    0.002076        2076         1 setlocale
-  0.22    0.001731         577         3 sigaction
-  0.15    0.001167         291         4 close
-  0.10    0.000807         269         3 localeconv
-  0.08    0.000674         337         2 sigaddset
-  0.08    0.000648         324         2 sigismember
-  0.07    0.000591         295         2 __sprintf_chk
-  0.07    0.000523         261         2 __freading
-  0.06    0.000500         125         4 __errno_location
-  0.06    0.000440         440         1 fclose
-  0.06    0.000439         439         1 strrchr
-  0.05    0.000374         187         2 open64
-  0.04    0.000353         353         1 getenv
-  0.04    0.000352         176         2 dup2
-  0.04    0.000334         334         1 sigemptyset
-  0.04    0.000333         333         1 __fpending
-  0.04    0.000321         107         3 strchr
-  0.04    0.000310         155         2 malloc
-  0.04    0.000310         310         1 fileno
-  0.04    0.000293         293         1 memmove
-  0.03    0.000263         263         1 fflush
-  0.03    0.000203         203         1 lseek64
-  0.02    0.000164         164         1 __cxa_atexit
-  0.02    0.000162         162         1 __strtoull_internal
-  0.02    0.000126         126         1 getpagesize
-  0.02    0.000125         125         1 __ctype_b_loc
-  0.02    0.000122         122         1 bindtextdomain
-  0.01    0.000115         115         1 getopt_long
-  0.01    0.000111         111         1 textdomain
------- ----------- ----------- --------- --------------------
-100.00    0.793099                  3065 total
-    ____________________________________________________________
-    84.88   4.942763        4942      1000  read    
-    9.41    0.548195         548      1000  write   
-    5.06    0.294716         294      1001  memcpy  
-    0.11    0.006365        2121         3  __fprintf_chk   
-    0.09    0.004969        4969         1  dcgettext   
-    0.08    0.004850         808         6  strlen  
-    0.05    0.002667        2667         1  setlocale   
-    0.04    0.002579         644         4  sigaction   
-    0.03    0.001869         467         4  close   
-    0.03    0.001825         912         2  open64  
-    0.03    0.001519         759         2  malloc  
-    0.02    0.001187         593         2  __sprintf\_chk  
-    0.02    0.001176         588         2  clock\_gettime  
-    0.02    0.001169         389         3  __errno_location    
-    0.02    0.001012         506         2  dcngettext  
-    0.01    0.000814         814         1  lseek64 
-    0.01    0.000757         757         1  getopt_long 
-    0.01    0.000744         744         1  textdomain  
-    0.01    0.000742         247         3  strchr  
-    0.01    0.000634         634         1  __strtoull\_internal    
-    0.01    0.000602         602         1  getpagesize 
-    0.01    0.000542         271         2  localeconv  
-    0.01    0.000340         340         1  fclose  
-    0.01    0.000300         300         1  memmove 
-    0.00    0.000228         114         2  sigismember 
-    0.00    0.000184         184         1  getenv  
-    0.00    0.000170          85         2  sigaddset   
-    0.00    0.000148          74         2  free    
-    0.00    0.000093          93         1  bindtextdomain  
-    0.00    0.000090          90         1  sigemptyset 
-    0.00    0.000090          90         1  __cxa_atexit    
-    0.00    0.000088          88         1  __ctype\_b\_loc 
-    0.00    0.000074          74         1  __fpending  
-    ____________________________________________________________
-    100.00    5.823501                 3057 total   
+    37.03     0.293652         293      1000    read
+    34.89     0.276706         276      1000    write
+    22.45     0.178077         178      1000    memcpy
+    1.61      0.012749        6374         2    __fprintf_chk
+    0.90      0.007102        7102         1    __overflow
+    0.65      0.005148        2574         2    dcgettext
+    0.38      0.002978        1489         2    clock_gettime
+    0.34      0.002720         272        10    strlen
+    0.26      0.002076        2076         1    setlocale
+    0.22      0.001731         577         3    sigaction
+    0.15      0.001167         291         4    close
+    0.10      0.000807         269         3    localeconv
+    0.08      0.000674         337         2    sigaddset
+    0.08      0.000648         324         2    sigismember
+    0.07      0.000591         295         2    __sprintf_chk
+    0.07      0.000523         261         2    __freading
+    0.06      0.000500         125         4    __errno_location
+    0.06      0.000440         440         1    fclose
+    0.06      0.000439         439         1    strrchr
+    0.05      0.000374         187         2    open64
+    0.04      0.000353         353         1    getenv
+    0.04      0.000352         176         2    dup2
+    0.04      0.000334         334         1    sigemptyset
+    0.04      0.000333         333         1    __fpending
+    0.04      0.000321         107         3    strchr
+    0.04      0.000310         155         2    malloc
+    0.04      0.000310         310         1    fileno
+    0.04      0.000293         293         1    memmove
+    0.03      0.000263         263         1    fflush
+    0.03      0.000203         203         1    lseek64
+    0.02      0.000164         164         1    __cxa_atexit
+    0.02      0.000162         162         1    __strtoull_internal
+    0.02      0.000126         126         1    getpagesize
+    0.02      0.000125         125         1    __ctype_b_loc
+    0.02      0.000122         122         1    bindtextdomain
+    0.01      0.000115         115         1    getopt_long
+    0.01      0.000111         111         1    textdomain
+    ------ ----------- ----------- --------- --------------------
+    100.00    0.793099                  3065 total
  
-注:
-使用-c选项, ltrace输出由进程创建的库调用, 输出结果以调用过程的时间为准进行排序.
-因为是从urandom设备上读, 这是一种产生随机数的设备, 完成后写入null设备, 所以读过程花费了较多的时间.
-使用ltrace去捕获运行时函数, 就好像在进程上系上了一个调试工具, 它占据了ltrace大量的时间, 这里ltrace一共消耗了5.8秒.
+    注:
+    使用-c选项, ltrace输出由进程创建的库调用, 输出结果以调用过程的时间为准进行排序.
+    因为是从urandom设备上读, 这是一种产生随机数的设备, 完成后写入null设备, 所以读过程花费了较多的时间.
+    使用ltrace去捕获运行时函数, 就好像在进程上系上了一个调试工具, 它占据了ltrace大量的时间, 这里ltrace一共消耗了5.8秒.
  
-我们再来看一下strace所花费的时间, 如下:
+    我们再来看一下strace所花费的时间, 如下:
  
-strace -c dd if=/dev/urandom of=/dev/null count=1000
-1000+0 records in
-1000+0 records out
-512000 bytes (512 kB) copied, 0.894482 seconds, 572 kB/s
-Process 3049 detached
-% time     seconds  usecs/call     calls    errors syscall
------- ----------- ----------- --------- --------- ----------------
- 82.85    0.159393         159      1005           read
- 15.07    0.028995          29      1003           write
-  0.78    0.001494        1494         1           execve
-  0.42    0.000814         136         6           rt_sigaction
-  0.23    0.000446          41        11         1 close
-  0.23    0.000435          73         6           fstat64
-  0.21    0.000412          32        13           mmap2
-  0.21    0.000408          29        14         6 open
-  0.00    0.000000           0         1         1 access
-  0.00    0.000000           0         3           brk
-  0.00    0.000000           0         2           munmap
-  0.00    0.000000           0         1           uname
-  0.00    0.000000           0         4           mprotect
-  0.00    0.000000           0         1           _llseek
-  0.00    0.000000           0         1           rt_sigprocmask
-  0.00    0.000000           0         1           getrlimit
-  0.00    0.000000           0         1           set_thread_area
-  0.00    0.000000           0         1           set_tid_address
-  0.00    0.000000           0         2           clock_gettime
-  0.00    0.000000           0         1           set_robust_list
------- ----------- ----------- --------- --------- ----------------
-100.00    0.192397                  2078         8 total
+    strace -c dd if=/dev/urandom of=/dev/null count=1000
+    1000+0 records in
+    1000+0 records out
+    512000 bytes (512 kB) copied, 0.894482 seconds, 572 kB/s
+    Process 3049 detached
+    % time     seconds  usecs/call     calls    errors syscall
+    ------ ----------- ----------- --------- --------- ----------------
+    82.85    0.159393         159      1005           read
+    15.07    0.028995          29      1003           write
+    0.78    0.001494        1494         1           execve
+    0.42    0.000814         136         6           rt_sigaction
+    0.23    0.000446          41        11         1 close
+    0.23    0.000435          73         6           fstat64
+    0.21    0.000412          32        13           mmap2
+    0.21    0.000408          29        14         6 open
+    0.00    0.000000           0         1         1 access
+    0.00    0.000000           0         3           brk
+    0.00    0.000000           0         2           munmap
+    0.00    0.000000           0         1           uname
+    0.00    0.000000           0         4           mprotect
+    0.00    0.000000           0         1           _llseek
+    0.00    0.000000           0         1           rt_sigprocmask
+    0.00    0.000000           0         1           getrlimit
+    0.00    0.000000           0         1           set_thread_area
+    0.00    0.000000           0         1           set_tid_address
+    0.00    0.000000           0         2           clock_gettime
+    0.00    0.000000           0         1           set_robust_list
+    ------ ----------- ----------- --------- --------- ----------------
+    100.00    0.192397                  2078         8 total
  
-注: 
-strace一共消耗了0.19秒, strace把性能提升了30倍, 这主要是strace在跟踪系统调用的时候不需要动态库, 而ltrace是根据动态库来分析程序运行的.
-所以ltrace也只能跟踪动态库, 不能跟踪静态库.
+    注: 
+    strace一共消耗了0.19秒, strace把性能提升了30倍, 这主要是strace在跟踪系统调用的时候不需要动态库, 而ltrace是根据动态库来分析程序运行的.
+    所以ltrace也只能跟踪动态库, 不能跟踪静态库.
 
 
-3) ltrace与strace的相同点
-
-事实上我们用ltrace和strace都可以发现程序在哪个系统调用时发生了性能瓶径.
-ltrace用-T, 而strace也用-T.
+# 3. ltrace与strace的相同点
+    事实上我们用ltrace和strace都可以发现程序在哪个系统调用时发生了性能瓶径.
+    ltrace用-T, 而strace也用-T.
  
-ltrace与strace都可以指定PID, 即对运行中的程序进行跟踪.
-ltrace -p PID与strace -p PID
+    ltrace与strace都可以指定PID, 即对运行中的程序进行跟踪.
+    ltrace -p PID与strace -p PID
