@@ -1,17 +1,16 @@
-1) strace && ltrace简介
+# 1. strace && ltrace简介
+    / strace	跟踪程序的每个系统调用
+    \ ltrace	跟踪程序的库函数调用
 
-/ strace	跟踪程序的每个系统调用
-\ ltrace	跟踪程序的库函数调用
-
-eg. 
+    eg. 
 	strace ./a.out
 	ltrace ./a.out
 	 
-同样的ltrace也可以把系统调用都打印出来, 使用-S参数
+    同样的ltrace也可以把系统调用都打印出来, 使用-S参数
 	ltrace -S ./a.out
   
  
-2) ltrace/strace的耗时
+# 2. ltrace/strace的耗时
  
 ltrace -c dd if=/dev/urandom of=/dev/null count=1000
 1000+0 records in
