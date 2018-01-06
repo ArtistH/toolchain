@@ -11,11 +11,55 @@
   
  
 # 2. ltrace/strace的耗时
-    ltrace -c dd if=/dev/urandom of=/dev/null count=1000    
+    ltrace -c dd if=/dev/urandom of=/dev/null count=1000   
     1000+0 records in   
     1000+0 records out  
     512000 bytes (512 kB) copied, 2.31346 seconds, 221 kB/s 
     % time   seconds   usecs/call     calls      function  
+1000+0 records in
+1000+0 records out
+512000 bytes (512 kB, 500 KiB) copied, 0.969418 s, 528 kB/s
+% time     seconds  usecs/call     calls      function
+------ ----------- ----------- --------- --------------------
+ 37.03    0.293652         293      1000 read
+ 34.89    0.276706         276      1000 write
+ 22.45    0.178077         178      1000 memcpy
+  1.61    0.012749        6374         2 __fprintf_chk
+  0.90    0.007102        7102         1 __overflow
+  0.65    0.005148        2574         2 dcgettext
+  0.38    0.002978        1489         2 clock_gettime
+  0.34    0.002720         272        10 strlen
+  0.26    0.002076        2076         1 setlocale
+  0.22    0.001731         577         3 sigaction
+  0.15    0.001167         291         4 close
+  0.10    0.000807         269         3 localeconv
+  0.08    0.000674         337         2 sigaddset
+  0.08    0.000648         324         2 sigismember
+  0.07    0.000591         295         2 __sprintf_chk
+  0.07    0.000523         261         2 __freading
+  0.06    0.000500         125         4 __errno_location
+  0.06    0.000440         440         1 fclose
+  0.06    0.000439         439         1 strrchr
+  0.05    0.000374         187         2 open64
+  0.04    0.000353         353         1 getenv
+  0.04    0.000352         176         2 dup2
+  0.04    0.000334         334         1 sigemptyset
+  0.04    0.000333         333         1 __fpending
+  0.04    0.000321         107         3 strchr
+  0.04    0.000310         155         2 malloc
+  0.04    0.000310         310         1 fileno
+  0.04    0.000293         293         1 memmove
+  0.03    0.000263         263         1 fflush
+  0.03    0.000203         203         1 lseek64
+  0.02    0.000164         164         1 __cxa_atexit
+  0.02    0.000162         162         1 __strtoull_internal
+  0.02    0.000126         126         1 getpagesize
+  0.02    0.000125         125         1 __ctype_b_loc
+  0.02    0.000122         122         1 bindtextdomain
+  0.01    0.000115         115         1 getopt_long
+  0.01    0.000111         111         1 textdomain
+------ ----------- ----------- --------- --------------------
+100.00    0.793099                  3065 total
     ____________________________________________________________
     84.88   4.942763        4942      1000  read    
     9.41    0.548195         548      1000  write   
