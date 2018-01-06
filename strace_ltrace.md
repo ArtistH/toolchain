@@ -11,48 +11,47 @@
   
  
 # 2. ltrace/strace的耗时
- 
-    ## ltrace -c dd if=/dev/urandom of=/dev/null count=1000
-    1000+0 records in
-    1000+0 records out
-    512000 bytes (512 kB) copied, 2.31346 seconds, 221 kB/s
-    % time     seconds  usecs/call     calls      function
-    ------ ----------- ----------- --------- --------------------
-    84.88    4.942763        4942     1000 read
-    9.41    0.548195         548      1000 write
-    5.06    0.294716         294      1001 memcpy
-    0.11    0.006365        2121         3 __fprintf_chk
-    0.09    0.004969        4969         1 dcgettext
-    0.08    0.004850         808         6 strlen
-    0.05    0.002667        2667         1 setlocale
-    0.04    0.002579         644         4 sigaction
-    0.03    0.001869         467         4 close
-    0.03    0.001825         912         2 open64
-    0.03    0.001519         759         2 malloc
-    0.02    0.001187         593         2 __sprintf\_chk
-    0.02    0.001176         588         2 clock\_gettime
-    0.02    0.001169         389         3 __errno_location
-    0.02    0.001012         506         2 dcngettext
-    0.01    0.000814         814         1 lseek64
-    0.01    0.000757         757         1 getopt_long
-    0.01    0.000744         744         1 textdomain
-    0.01    0.000742         247         3 strchr
-    0.01    0.000634         634         1 __strtoull\_internal
-    0.01    0.000602         602         1 getpagesize
-    0.01    0.000542         271         2 localeconv
-    0.01    0.000340         340         1 fclose
-    0.01    0.000300         300         1 memmove
-    0.00    0.000228         114         2 sigismember
-    0.00    0.000184         184         1 getenv
-    0.00    0.000170          85         2 sigaddset
-    0.00    0.000148          74         2 free
-    0.00    0.000093          93         1 bindtextdomain
-    0.00    0.000090          90         1 sigemptyset
-    0.00    0.000090          90         1 __cxa_atexit
-    0.00    0.000088          88         1 __ctype\_b\_loc
-    0.00    0.000074          74         1 __fpending
-    ------ ----------- ----------- --------- --------------------
-    100.00    5.823501                  3057 total
+    ltrace -c dd if=/dev/urandom of=/dev/null count=1000    
+    1000+0 records in   
+    1000+0 records out  
+    512000 bytes (512 kB) copied, 2.31346 seconds, 221 kB/s 
+    % time   seconds   usecs/call     calls      function  
+    ------ ----------- ----------- -------- --------------------    
+    84.88   4.942763        4942      1000  read    
+    9.41    0.548195         548      1000  write   
+    5.06    0.294716         294      1001  memcpy  
+    0.11    0.006365        2121         3  __fprintf_chk   
+    0.09    0.004969        4969         1  dcgettext   
+    0.08    0.004850         808         6  strlen  
+    0.05    0.002667        2667         1  setlocale   
+    0.04    0.002579         644         4  sigaction   
+    0.03    0.001869         467         4  close   
+    0.03    0.001825         912         2  open64  
+    0.03    0.001519         759         2  malloc  
+    0.02    0.001187         593         2  __sprintf\_chk  
+    0.02    0.001176         588         2  clock\_gettime  
+    0.02    0.001169         389         3  __errno_location    
+    0.02    0.001012         506         2  dcngettext  
+    0.01    0.000814         814         1  lseek64 
+    0.01    0.000757         757         1  getopt_long 
+    0.01    0.000744         744         1  textdomain  
+    0.01    0.000742         247         3  strchr  
+    0.01    0.000634         634         1  __strtoull\_internal    
+    0.01    0.000602         602         1  getpagesize 
+    0.01    0.000542         271         2  localeconv  
+    0.01    0.000340         340         1  fclose  
+    0.01    0.000300         300         1  memmove 
+    0.00    0.000228         114         2  sigismember 
+    0.00    0.000184         184         1  getenv  
+    0.00    0.000170          85         2  sigaddset   
+    0.00    0.000148          74         2  free    
+    0.00    0.000093          93         1  bindtextdomain  
+    0.00    0.000090          90         1  sigemptyset 
+    0.00    0.000090          90         1  __cxa_atexit    
+    0.00    0.000088          88         1  __ctype\_b\_loc 
+    0.00    0.000074          74         1  __fpending  
+    ------ ----------- ----------- -------- --------------------    
+    100.00    5.823501                 3057 total   
  
 注:
 使用-c选项, ltrace输出由进程创建的库调用, 输出结果以调用过程的时间为准进行排序.
