@@ -15,15 +15,11 @@
     1000+0 records in   
     1000+0 records out  
     512000 bytes (512 kB) copied, 2.31346 seconds, 221 kB/s 
-    % time   seconds   usecs/call     calls      function  
-1000+0 records in
-1000+0 records out
-512000 bytes (512 kB, 500 KiB) copied, 0.969418 s, 528 kB/s
-% time     seconds  usecs/call     calls      function
------- ----------- ----------- --------- --------------------
- 37.03    0.293652         293      1000 read
- 34.89    0.276706         276      1000 write
- 22.45    0.178077         178      1000 memcpy
+    % time     seconds  usecs/call     calls      function
+    ------ ----------- ----------- --------- --------------------
+    37.03    0.293652         293      1000 read
+    34.89    0.276706         276      1000 write
+    22.45    0.178077         178      1000 memcpy
   1.61    0.012749        6374         2 __fprintf_chk
   0.90    0.007102        7102         1 __overflow
   0.65    0.005148        2574         2 dcgettext
