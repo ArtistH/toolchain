@@ -97,3 +97,8 @@
     ltrace用-T, 而strace也用-T.
     ltrace与strace都可以指定PID, 即对运行中的程序进行跟踪.
     ltrace -p PID VS strace -p PID
+
+# 4. Example
+    shell) gcc main.c
+    shell) ltrace ./a.out
+    观察可见_libc_start_main才是程序入口, main函数中de printf被编译器优化为puts().
