@@ -121,10 +121,10 @@ PART2: Plugin
     let Tlist_Use_Right_Window = 1  "在右侧窗口中显示taglist窗口 
     nmap tl :Tlist<cr>              "设置快捷键 
 
-    :Tlist	--- 开启taglist(快捷键 tl)
-    o		--- 在一个新打开的窗口中显示光标下tag
-    <Space>	--- 显示光标下tag的原型定义
-    u		--- 更新taglist窗口中的tag
+    :Tlist  --- 开启taglist(快捷键 tl)
+    o       --- 在一个新打开的窗口中显示光标下tag
+    <Space> --- 显示光标下tag的原型定义
+    u       --- 更新taglist窗口中的tag
     s		--- 更改排序方式, 在按名字排序和按出现顺序排序间切换
     x		--- taglist窗口放大和缩小, 方便查看较长的tag
     +		--- 打开一个折叠
