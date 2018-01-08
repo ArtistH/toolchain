@@ -1,0 +1,174 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Maintainer: 
+"       Artist.H
+"       <artist.gnu@gmail.com>
+"
+" Version: 
+"       2.0 - Mar 23, 2016 
+"
+" Sections:
+"    -> General
+"    -> VIM user interface
+"    -> Colors and Fonts
+"    -> Files and backups
+"    -> Text, tab and indent related
+"    -> Plugin(local)
+"    -> Plugin manage with Vundle
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => General
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Sets how many lines of history VIM has to remember
+set history=700
+
+" Enable filetype plugins
+filetype plugin on
+filetype indent on
+
+" Set to auto read when a file is changed from the outside
+set autoread
+
+" With a map leader it's possible to do extra key combinations
+" like <leader>w saves the current file
+let mapleader = ","
+let g:mapleader = ","
+
+" Fast saving
+nmap <leader>w :w!<cr>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => VIM user interface
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Always show current position
+set ruler
+
+" Configure backspace so it acts as it should act
+set backspace=eol,start,indent
+
+" Highlight search results
+set hlsearch
+
+" Makes search act like search in modern browsers
+set incsearch
+
+" Show matching brackets when text indicator is over them
+set showmatch
+
+" No annoying sound on errors
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Colors and Fonts
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Enable syntax highlighting
+syntax enable
+
+colorscheme desert
+set background=dark
+
+" Set extra options when running in GUI mode
+if has("gui_running")
+    set guioptions-=T
+    set guioptions+=e
+    set t_Co=256
+    set guitablabel=%M\ %t
+endif
+
+" Set utf8 as standard encoding and en_US as the standard language
+set encoding=utf8
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+set termencoding=utf-8
+
+" Use Unix as the standard file type
+set ffs=unix,dos,mac
+
+" Set guifont(for windows using)
+set guifont=Courier_New:h12:cANSI
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Files, backups and undo
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Turn backup off, since most stuff is in SVN, git et.c anyway...
+set nobackup
+set nowb
+set noswapfile
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Text, tab and indent related
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use spaces instead of tabs
+set expandtab
+
+" Be smart when using tabs ;)
+set smarttab
+
+" 1 tab == 4 spaces
+set shiftwidth=4
+set tabstop=4
+
+" Linebreak on 500 characters
+set lbr
+set tw=500
+
+set ai "Auto indent
+set si "Smart indent
+set wrap "Wrap lines
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugin(local)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <silent> <F3> :Grep<CR>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugin, manage with Vundle
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible                " be iMproved
+filetype off                    " required!
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+"let Vundle manage Vundle 
+"required!
+Bundle 'gmarik/vundle'           
+
+
+" My Bundles here:
+"
+" original repos on github
+Bundle 'vim-scripts/taglist.vim'
+let Tlist_Show_One_File = 1
+let Tlist_Exit_OnlyWindow = 1
+let Tlist_Use_Right_Window = 1
+nmap tl :Tlist<cr>
+
+Bundle 'scrooloose/nerdtree'
+let NERDTreeWinPos='left'
+let NERDTreeWinSize=30
+map <F2> :NERDTreeToggle<CR>
+
+Bundle 'bling/vim-airline'
+set laststatus=2
+
+
+filetype plugin indent on       " required!
+
+"
+" Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
