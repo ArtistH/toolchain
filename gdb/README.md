@@ -73,7 +73,7 @@
 # 修改内存
     命令形式: set * 有类型的指针=value
     使用示例: 对于void *p = malloc(128)这样分配的地址, 可以使用先强制指定类型, 后再写入值, 如:
-    set *((char *)p)= 0x61; 
-    set *((char *)p)= 'a';
-    set *((char *)(p+110))='b';
-    set *(int *)p=0xff;
+    set *((char *)p)= 0x61
+    set *((char *)p)= 'a'
+    set *((char *)(p+110))='b'
+    set *(int *)p=0xff
