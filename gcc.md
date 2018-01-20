@@ -34,11 +34,11 @@
 　	eg: gcc -c test.c // 他将生成.o的obj文件
 
 ## -C 
-　	在预处理的时候, 不删除注释信息, 一般和-E使用, 有时候分析程序用这个很方便. 
+　	在预处理的时候, 不删除注释信息, 一般和-E使用, 有时候分析程序用这个很方便.
 　　	
 ## -ansi 
-　	关闭gnu c中与ansi c不兼容的特性, 激活ansi c的专有特性.
-    (包括禁止一些asm inline typeof关键字, 以及UNIX, vax等预处理宏.)
+　	关闭gnu c中与ansi c不兼容的特性, 激活ansi c的专有特性. 
+    (包括禁止一些asm inline typeof关键字, 以及UNIX, vax等预处理宏.) 
 
 ## -include file 
     功能就相当于在代码中使用#include.
