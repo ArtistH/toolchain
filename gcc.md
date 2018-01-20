@@ -1,13 +1,13 @@
 # Intro
-    gccÊÇgnuµÄc±àÒëÆ÷, gccÔÚÖ´ÐÐ±àÒë¹¤×÷µÄÊ±ºò, ×Ü¹²ÐèÒª4²½:
+    gccæ˜¯gnuçš„cç¼–è¯‘å™¨, gccåœ¨æ‰§è¡Œç¼–è¯‘å·¥ä½œçš„æ—¶å€™, æ€»å…±éœ€è¦4æ­¥:
 
-	1. Pre-Processing   Ô¤´¦Àí, Éú³É.iµÄÎÄ¼þ.					    [Ô¤´¦ÀíÆ÷cpp] 
-	2. Compiling		½«Ô¤´¦ÀíºóµÄÎÄ¼þ×ª»»³É»ã±àÓïÑÔ, Éú³ÉÎÄ¼þ.s. [±àÒëÆ÷egcs] 
-	3. Assembling 		ÓÉ»ã±à±äÎªÄ¿±ê´úÂë(»úÆ÷´úÂë)Éú³É.oÎÄ¼þ.	    [»ã±àÆ÷as] 
-	4. Linking 			Á¬½ÓÄ¿±ê´úÂë, Éú³É¿ÉÖ´ÐÐ³ÌÐò.			    [Á´½ÓÆ÷ld] 
+	1. Pre-Processing   	é¢„å¤„ç†, ç”Ÿæˆ.içš„æ–‡ä»¶.                      [é¢„å¤„ç†å™¨cpp] 
+	2. Compiling		å°†é¢„å¤„ç†åŽçš„æ–‡ä»¶è½¬æ¢æˆæ±‡ç¼–è¯­è¨€, ç”Ÿæˆæ–‡ä»¶.s.  [ç¼–è¯‘å™¨egcs] 
+	3. Assembling 		ç”±æ±‡ç¼–å˜ä¸ºç›®æ ‡ä»£ç (æœºå™¨ä»£ç )ç”Ÿæˆ.oæ–‡ä»¶.	    [æ±‡ç¼–å™¨as] 
+	4. Linking 		è¿žæŽ¥ç›®æ ‡ä»£ç , ç”Ÿæˆå¯æ‰§è¡Œç¨‹åº.               [é“¾æŽ¥å™¨ld] 
 
 
-# ²é¿´gcc±àÒëÓÅ»¯µÄ¾ßÌåÑ¡Ïî¿ª¹Ø
+# æŸ¥çœ‹gccç¼–è¯‘ä¼˜åŒ–çš„å…·ä½“é€‰é¡¹å¼€å…³
     gcc -c -Q -O1 --help=optimizers > /tmp/O1-opts
     gcc -c -Q -O2 --help=optimizers > /tmp/O2-opts
     diff /tmp/O1-opts /tmp/O2-opts | grep enabled
@@ -15,106 +15,106 @@
 
 # gcc [options] [filenames] 
 ## -o FILE
-    Éú³ÉÖ¸¶¨µÄÊä³öÎÄ¼þ. 
-	eg: shell) gcc test.c -o test
-¡¡¡¡    shell) gcc -S hello.c -o hello.asm
+    ç”ŸæˆæŒ‡å®šçš„è¾“å‡ºæ–‡ä»¶. 
+	shell) gcc test.c -o test
+ã€€ã€€    shell) gcc -S hello.c -o hello.asm
 
 ## -E
-    Ö»¼¤»îÔ¤´¦Àí(¼´Ö»ÔËÐÐÔ¤±àÒëÆ÷). ²»Éú³ÉÎÄ¼þ, »á´òÓ¡µ½±ê×¼Êä³ö. 
-    Èç¹ûÐèÒª±£´æ, ¿ÉÒÔÓÃÖØ¶¨Ïò·½·¨»ò-oÑ¡Ïî:
+    åªæ¿€æ´»é¢„å¤„ç†(å³åªè¿è¡Œé¢„ç¼–è¯‘å™¨). ä¸ç”Ÿæˆæ–‡ä»¶, ä¼šæ‰“å°åˆ°æ ‡å‡†è¾“å‡º. 
+    å¦‚æžœéœ€è¦ä¿å­˜, å¯ä»¥ç”¨é‡å®šå‘æ–¹æ³•æˆ–-oé€‰é¡¹:
     shell) gcc -E test.c > test.i
     shell) gcc -E test.c -o test.i
 
 ## -S
-    Ö»¼¤»îÔ¤´¦ÀíºÍ±àÒë. ¼´Ö¸°ÑÎÄ¼þ±àÒë³ÉÎª»ã±à´úÂë.
-    eg: gcc -S test.c // Ëû½«Éú³É.sµÄ»ã±à´úÂë.
+    åªæ¿€æ´»é¢„å¤„ç†å’Œç¼–è¯‘. å³æŒ‡æŠŠæ–‡ä»¶ç¼–è¯‘æˆä¸ºæ±‡ç¼–ä»£ç .
+    eg: gcc -S test.c // ä»–å°†ç”Ÿæˆ.sçš„æ±‡ç¼–ä»£ç .
 
 ## -c 
-¡¡	Ö»¼¤»îÔ¤´¦Àí, ±àÒëºÍ»ã±à. Ò²¾ÍÊÇËûÖ»°Ñ³ÌÐò×ö³ÉobjÎÄ¼þ.
-¡¡	eg: gcc -c test.c // Ëû½«Éú³É.oµÄobjÎÄ¼þ
+ã€€	åªæ¿€æ´»é¢„å¤„ç†, ç¼–è¯‘å’Œæ±‡ç¼–. ä¹Ÿå°±æ˜¯ä»–åªæŠŠç¨‹åºåšæˆobjæ–‡ä»¶.
+ã€€	eg: gcc -c test.c // ä»–å°†ç”Ÿæˆ.oçš„objæ–‡ä»¶
 
 ## -C 
-¡¡	ÔÚÔ¤´¦ÀíµÄÊ±ºò, ²»É¾³ý×¢ÊÍÐÅÏ¢, Ò»°ãºÍ-EÊ¹ÓÃ, ÓÐÊ±ºò·ÖÎö³ÌÐòÓÃÕâ¸öºÜ·½±ã. 
-¡¡¡¡	
+ã€€	åœ¨é¢„å¤„ç†çš„æ—¶å€™, ä¸åˆ é™¤æ³¨é‡Šä¿¡æ¯, ä¸€èˆ¬å’Œ-Eä½¿ç”¨, æœ‰æ—¶å€™åˆ†æžç¨‹åºç”¨è¿™ä¸ªå¾ˆæ–¹ä¾¿. 
+ã€€ã€€	
 ## -ansi 
-¡¡	¹Ø±Õgnu cÖÐÓëansi c²»¼æÈÝµÄÌØÐÔ, ¼¤»îansi cµÄ×¨ÓÐÌØÐÔ.
-    (°üÀ¨½ûÖ¹Ò»Ð©asm inline typeof¹Ø¼ü×Ö, ÒÔ¼°UNIX, vaxµÈÔ¤´¦Àíºê.)
+ã€€	å…³é—­gnu cä¸­ä¸Žansi cä¸å…¼å®¹çš„ç‰¹æ€§, æ¿€æ´»ansi cçš„ä¸“æœ‰ç‰¹æ€§.
+    (åŒ…æ‹¬ç¦æ­¢ä¸€äº›asm inline typeofå…³é”®å­—, ä»¥åŠUNIX, vaxç­‰é¢„å¤„ç†å®.)
 
 ## -include file 
-    ¹¦ÄÜ¾ÍÏàµ±ÓÚÔÚ´úÂëÖÐÊ¹ÓÃ#include.
-¡¡	eg: gcc hello.c -include /root/pianopan.h 
-¡¡¡¡ 
+    åŠŸèƒ½å°±ç›¸å½“äºŽåœ¨ä»£ç ä¸­ä½¿ç”¨#include.
+ã€€	eg: gcc hello.c -include /root/pianopan.h 
+ã€€ã€€ 
 ## -Dmacro 
-¡¡	Ïàµ±ÓÚCÓïÑÔÖÐµÄ#define macro 
+ã€€	ç›¸å½“äºŽCè¯­è¨€ä¸­çš„#define macro 
 ## -Dmacro=defn 
-¡¡	Ïàµ±ÓÚCÓïÑÔÖÐµÄ#define macro=defn 
+ã€€	ç›¸å½“äºŽCè¯­è¨€ä¸­çš„#define macro=defn 
 ## -Umacro 
-¡¡	Ïàµ±ÓÚCÓïÑÔÖÐµÄ#undef macro 
+ã€€	ç›¸å½“äºŽCè¯­è¨€ä¸­çš„#undef macro 
 
 ## -Idir 
-¡¡	¶ÔÓÚ#include <file>, gcc»áµ½-IÖÆ¶¨µÄÄ¿Â¼²éÕÒ, ²éÕÒ²»µ½, È»ºó½«µ½ÏµÍ³µÄÈ±Ê¡µÄÍ·ÎÄ¼þÄ¿Â¼²éÕÒ.
+ã€€	å¯¹äºŽ#include <file>, gccä¼šåˆ°-Iåˆ¶å®šçš„ç›®å½•æŸ¥æ‰¾, æŸ¥æ‰¾ä¸åˆ°, ç„¶åŽå°†åˆ°ç³»ç»Ÿçš„ç¼ºçœçš„å¤´æ–‡ä»¶ç›®å½•æŸ¥æ‰¾.
 ## -I- 
-¡¡	¾ÍÊÇÈ¡ÏûÇ°Ò»¸ö²ÎÊýµÄ¹¦ÄÜ, ËùÒÔÒ»°ãÔÚ-IdirÖ®ºóÊ¹ÓÃ.
-¡¡¡¡ 
+ã€€	å°±æ˜¯å–æ¶ˆå‰ä¸€ä¸ªå‚æ•°çš„åŠŸèƒ½, æ‰€ä»¥ä¸€èˆ¬åœ¨-Idirä¹‹åŽä½¿ç”¨.
+ã€€ã€€ 
 ## -nostdinc 
-¡¡	Ê¹±àÒëÆ÷²»ÔÚÏµÍ³È±Ê¡µÄÍ·ÎÄ¼þÄ¿Â¼ÀïÃæÕÒÍ·ÎÄ¼þ, Ò»°ãºÍ-IÁªºÏÊ¹ÓÃ, Ã÷È·ÏÞ¶¨Í·ÎÄ¼þµÄÎ»ÖÃ.
-¡¡¡¡ ¡¡ 
+ã€€	ä½¿ç¼–è¯‘å™¨ä¸åœ¨ç³»ç»Ÿç¼ºçœçš„å¤´æ–‡ä»¶ç›®å½•é‡Œé¢æ‰¾å¤´æ–‡ä»¶, ä¸€èˆ¬å’Œ-Iè”åˆä½¿ç”¨, æ˜Žç¡®é™å®šå¤´æ–‡ä»¶çš„ä½ç½®.
+ã€€ã€€ ã€€ 
 ## -M 
-¡¡	Éú³ÉÎÄ¼þ¹ØÁªµÄÐÅÏ¢, °üº¬Ä¿±êÎÄ¼þËùÒÀÀµµÄËùÓÐÔ´´úÂë.
+ã€€	ç”Ÿæˆæ–‡ä»¶å…³è”çš„ä¿¡æ¯, åŒ…å«ç›®æ ‡æ–‡ä»¶æ‰€ä¾èµ–çš„æ‰€æœ‰æºä»£ç .
     eg: gcc -M hello.c 
 ## -MD 
-¡¡	ºÍ-MÏàÍ¬, µ«ÊÇÊä³ö½«µ¼Èëµ½.dµÄÎÄ¼þÀïÃæ.
+ã€€	å’Œ-Mç›¸åŒ, ä½†æ˜¯è¾“å‡ºå°†å¯¼å…¥åˆ°.dçš„æ–‡ä»¶é‡Œé¢.
 ## -MM 
-¡¡	ºÍ-MÏàÍ¬, µ«ÊÇËü½«ºöÂÔÓÉ#include <file>Ôì³ÉµÄÒÀÀµ¹ØÏµ.
+ã€€	å’Œ-Mç›¸åŒ, ä½†æ˜¯å®ƒå°†å¿½ç•¥ç”±#include <file>é€ æˆçš„ä¾èµ–å…³ç³».
 ## -MMD 
-¡¡	ºÍ-MMÏàÍ¬, µ«ÊÇÊä³ö½«µ¼Èëµ½.dµÄÎÄ¼þÀïÃæ.
-¡¡¡¡ 
+ã€€	å’Œ-MMç›¸åŒ, ä½†æ˜¯è¾“å‡ºå°†å¯¼å…¥åˆ°.dçš„æ–‡ä»¶é‡Œé¢.
+ã€€ã€€ 
 ## -llibrary 
-¡¡	Ö¸¶¨±àÒëµÄÊ±ºòÊ¹ÓÃµÄ¿â 
-¡¡	eg: gcc -lncurses hello.c 
-¡¡	Ê¹ÓÃncurses¿â±àÒë³ÌÐò 
-¡¡¡¡ 
+ã€€	æŒ‡å®šç¼–è¯‘çš„æ—¶å€™ä½¿ç”¨çš„åº“ 
+ã€€	eg: gcc -lncurses hello.c 
+ã€€	ä½¿ç”¨ncursesåº“ç¼–è¯‘ç¨‹åº 
+ã€€ã€€ 
 ## -Ldir 
-¡¡	Ö¸¶¨±àÒëµÄÊ±ºòËÑË÷¿âµÄÂ·¾¶.
-    ±ÈÈçÄã×Ô¼ºµÄ¿â, ¿ÉÒÔÓÃËüÖÆ¶¨Ä¿Â¼, ²»È»±àÒëÆ÷½«Ö»ÔÚ±ê×¼¿âµÄÄ¿Â¼ÕÒ. Õâ¸ödir¾ÍÊÇÄ¿Â¼µÄÃû³Æ.
-¡¡¡¡ 
-## ÓÅ»¯¼¶±ð
-    -O0 
-    -O1 
-    -O2 
-    -O3 
-¡¡	±àÒëÆ÷µÄÓÅ»¯Ñ¡ÏîµÄ4¸ö¼¶±ð, -O0±íÊ¾Ã»ÓÐÓÅ»¯, -O1ÎªÈ±Ê¡Öµ, -O3ÓÅ»¯¼¶±ð×î¸ß.¡¡ 
+	æŒ‡å®šç¼–è¯‘çš„æ—¶å€™æœç´¢åº“çš„è·¯å¾„.
+    	æ¯”å¦‚ä½ è‡ªå·±çš„åº“, å¯ä»¥ç”¨å®ƒåˆ¶å®šç›®å½•, ä¸ç„¶ç¼–è¯‘å™¨å°†åªåœ¨æ ‡å‡†åº“çš„ç›®å½•æ‰¾. è¿™ä¸ªdirå°±æ˜¯ç›®å½•çš„åç§°.
+ã€€ã€€ 
+## ä¼˜åŒ–çº§åˆ«
+    	-O0 
+    	-O1 
+    	-O2 
+    	-O3 
+ã€€	ç¼–è¯‘å™¨çš„ä¼˜åŒ–é€‰é¡¹çš„4ä¸ªçº§åˆ«, -O0è¡¨ç¤ºæ²¡æœ‰ä¼˜åŒ–, -O1ä¸ºç¼ºçœå€¼, -O3ä¼˜åŒ–çº§åˆ«æœ€é«˜.ã€€ 
 
 ## -g 
-¡¡¡¡Ö¸Ê¾±àÒëÆ÷ÔÚ±àÒëµÄÊ±ºò²úÉúµ÷ÊÔÐÅÏ¢.
+ã€€ã€€æŒ‡ç¤ºç¼–è¯‘å™¨åœ¨ç¼–è¯‘çš„æ—¶å€™äº§ç”Ÿè°ƒè¯•ä¿¡æ¯.
 ## -ggdb 
-¡¡	´ËÑ¡Ïî½«¾¡¿ÉÄÜµÄÉú³ÉgdbµÄ¿ÉÒÔÊ¹ÓÃµÄµ÷ÊÔÐÅÏ¢. 
+ã€€	æ­¤é€‰é¡¹å°†å°½å¯èƒ½çš„ç”Ÿæˆgdbçš„å¯ä»¥ä½¿ç”¨çš„è°ƒè¯•ä¿¡æ¯. 
 
 ## -static 
-¡¡	´ËÑ¡Ïî½«½ûÖ¹Ê¹ÓÃ¶¯Ì¬¿â, ËùÒÔ±àÒë³öÀ´µÄ¶«Î÷Ò»°ã¶¼ºÜ´ó, Ò²²»ÐèÒªÊ²Ã´¶¯Ì¬Á¬½Ó¿â¾Í¿ÉÒÔÔËÐÐ.
+ã€€	æ­¤é€‰é¡¹å°†ç¦æ­¢ä½¿ç”¨åŠ¨æ€åº“, æ‰€ä»¥ç¼–è¯‘å‡ºæ¥çš„ä¸œè¥¿ä¸€èˆ¬éƒ½å¾ˆå¤§, ä¹Ÿä¸éœ€è¦ä»€ä¹ˆåŠ¨æ€è¿žæŽ¥åº“å°±å¯ä»¥è¿è¡Œ.
 ## -shared
-¡¡	´ËÑ¡Ïî½«¾¡Á¿Ê¹ÓÃ¶¯Ì¬¿â, ËùÒÔÉú³ÉÎÄ¼þ±È½ÏÐ¡. 
-    ±àÒë¶¯Ì¬¿âÒ»°ãÓÃ: gcc -fPIC -shared xxx.c -o xxx.so (×¢: ¶¯Ì¬¿âÖÐ²»ÄÜÓÐmain()º¯Êý, ·ñÔòÁ¬½ÓÊ±»á³ö´í.)
+ã€€	æ­¤é€‰é¡¹å°†å°½é‡ä½¿ç”¨åŠ¨æ€åº“, æ‰€ä»¥ç”Ÿæˆæ–‡ä»¶æ¯”è¾ƒå°. 
+    ç¼–è¯‘åŠ¨æ€åº“ä¸€èˆ¬ç”¨: gcc -fPIC -shared xxx.c -o xxx.so (æ³¨: åŠ¨æ€åº“ä¸­ä¸èƒ½æœ‰main()å‡½æ•°, å¦åˆ™è¿žæŽ¥æ—¶ä¼šå‡ºé”™.)
 
 ## -w 
-    ²»Éú³ÉÈÎºÎ¾¯¸æÐÅÏ¢.
+    ä¸ç”Ÿæˆä»»ä½•è­¦å‘Šä¿¡æ¯.
 ## -Wall 
-    Éú³ÉËùÓÐ¾¯¸æÐÅÏ¢.
+    ç”Ÿæˆæ‰€æœ‰è­¦å‘Šä¿¡æ¯.
 
 
-# ¶àÎÄ¼þ±àÒë
-	Èç¹ûÓÐ¶à¸öÔ´ÎÄ¼þ, »ù±¾ÉÏÓÐÁ½ÖÖ±àÒë·½·¨:
-	(¼ÙÉèÓÐÁ½¸öÔ´ÎÄ¼þÎªtest.cºÍtestfun.c)
+# å¤šæ–‡ä»¶ç¼–è¯‘
+	å¦‚æžœæœ‰å¤šä¸ªæºæ–‡ä»¶, åŸºæœ¬ä¸Šæœ‰ä¸¤ç§ç¼–è¯‘æ–¹æ³•:
+	(å‡è®¾æœ‰ä¸¤ä¸ªæºæ–‡ä»¶ä¸ºtest.cå’Œtestfun.c)
 
-	1. ¶à¸öÎÄ¼þÒ»Æð±àÒë
-	ÓÃ·¨: shell) gcc testfun.c test.c -o test
-	×÷ÓÃ: ½«testfun.cºÍtest.c·Ö±ð±àÒëºóÁ´½Ó³Étest¿ÉÖ´ÐÐÎÄ¼þ.
+	1. å¤šä¸ªæ–‡ä»¶ä¸€èµ·ç¼–è¯‘
+	ç”¨æ³•: shell) gcc testfun.c test.c -o test
+	ä½œç”¨: å°†testfun.cå’Œtest.cåˆ†åˆ«ç¼–è¯‘åŽé“¾æŽ¥æˆtestå¯æ‰§è¡Œæ–‡ä»¶.
 
-	2. ·Ö±ð±àÒë¸÷¸öÔ´ÎÄ¼þ, Ö®ºó¶Ô±àÒëºóÊä³öµÄÄ¿±êÎÄ¼þ½øÐÐÁ´½Ó.
-	ÓÃ·¨:
-	shell) gcc -c testfun.c ½«testfun.c±àÒë³Étestfun.o
-	shell) gcc -c test.c    ½«test.c±àÒë³Étest.o
-	shell) gcc -o testfun.o test.o -o test  ½«testfun.oºÍtest.oÁ´½Ó³Étest 
+	2. åˆ†åˆ«ç¼–è¯‘å„ä¸ªæºæ–‡ä»¶, ä¹‹åŽå¯¹ç¼–è¯‘åŽè¾“å‡ºçš„ç›®æ ‡æ–‡ä»¶è¿›è¡Œé“¾æŽ¥.
+	ç”¨æ³•:
+	shell) gcc -c testfun.c å°†testfun.cç¼–è¯‘æˆtestfun.o
+	shell) gcc -c test.c    å°†test.cç¼–è¯‘æˆtest.o
+	shell) gcc -o testfun.o test.o -o test  å°†testfun.oå’Œtest.oé“¾æŽ¥æˆtest 
 
-	ÒÔÉÏÁ½ÖÖ·½·¨Ïà±È½Ï, µÚÒ»ÖÐ·½·¨±àÒëÊ±ÐèÒªËùÓÐÎÄ¼þÖØÐÂ±àÒë,
-	¶øµÚ¶þÖÖ·½·¨¿ÉÒÔÖ»ÖØÐÂ±àÒëÐÞ¸ÄµÄÎÄ¼þ, Î´ÐÞ¸ÄµÄÎÄ¼þ²»ÓÃÖØÐÂ±àÒë.
+	ä»¥ä¸Šä¸¤ç§æ–¹æ³•ç›¸æ¯”è¾ƒ, ç¬¬ä¸€ä¸­æ–¹æ³•ç¼–è¯‘æ—¶éœ€è¦æ‰€æœ‰æ–‡ä»¶é‡æ–°ç¼–è¯‘,
+	è€Œç¬¬äºŒç§æ–¹æ³•å¯ä»¥åªé‡æ–°ç¼–è¯‘ä¿®æ”¹çš„æ–‡ä»¶, æœªä¿®æ”¹çš„æ–‡ä»¶ä¸ç”¨é‡æ–°ç¼–è¯‘.
