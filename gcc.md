@@ -1,32 +1,29 @@
-Intro
------
-gcc是gnu的c编译器, gcc在执行编译工作的时候, 总共需要4步:
+# Intro
+    gcc是gnu的c编译器, gcc在执行编译工作的时候, 总共需要4步:
 
-	1. Pre-Processing	预处理, 生成.i的文件.						[预处理器cpp] 
-	2. Compiling		将预处理后的文件转换成汇编语言, 生成文件.s.	[编译器egcs] 
-	3. Assembling 		由汇编变为目标代码(机器代码)生成.o文件.		[汇编器as] 
-	4. Linking 			连接目标代码, 生成可执行程序.				[链接器ld] 
+	1. Pre-Processing   预处理, 生成.i的文件.					    [预处理器cpp] 
+	2. Compiling		将预处理后的文件转换成汇编语言, 生成文件.s. [编译器egcs] 
+	3. Assembling 		由汇编变为目标代码(机器代码)生成.o文件.	    [汇编器as] 
+	4. Linking 			连接目标代码, 生成可执行程序.			    [链接器ld] 
 
 
-查看gcc编译优化的具体选项开关
------------------------------
+# 查看gcc编译优化的具体选项开关
     gcc -c -Q -O1 --help=optimizers > /tmp/O1-opts
     gcc -c -Q -O2 --help=optimizers > /tmp/O2-opts
     diff /tmp/O1-opts /tmp/O2-opts | grep enabled
 
 
-gcc [options] [filenames] 
--------------------------
+# gcc [options] [filenames] 
 	-o FILE
 	    生成指定的输出文件. 
-	    eg: shell> gcc test.c -o test
-　　	    shell> gcc -S hello.c -o hello.asm
+	    eg: shell) gcc test.c -o test
+　　	    shell) gcc -S hello.c -o hello.asm
 
 	-E
 	    只激活预处理(即只运行预编译器). 不生成文件, 会打印到标准输出. 
 	    如果需要保存, 可以用重定向方法或-o选项:
-	    shell> gcc -E test.c > test.i
-	    shell> gcc -E test.c -o test.i
+	    shell) gcc -E test.c > test.i
+	    shell) gcc -E test.c -o test.i
 
 	-S
 	    只激活预处理和编译. 即指把文件编译成为汇编代码.
@@ -104,20 +101,19 @@ gcc [options] [filenames]
 	    生成所有警告信息.
 
 
-多文件编译
-----------
+# 多文件编译
 	如果有多个源文件, 基本上有两种编译方法:
 	(假设有两个源文件为test.c和testfun.c)
 
 	1. 多个文件一起编译
-	用法: shell> gcc testfun.c test.c -o test
+	用法: shell) gcc testfun.c test.c -o test
 	作用: 将testfun.c和test.c分别编译后链接成test可执行文件.
 
 	2. 分别编译各个源文件, 之后对编译后输出的目标文件进行链接.
 	用法:
-	shell> gcc -c testfun.c //将testfun.c编译成testfun.o
-	shell> gcc -c test.c //将test.c编译成test.o
-	shell> gcc -o testfun.o test.o -o test //将testfun.o和test.o链接成test 
+	shell) gcc -c testfun.c 将testfun.c编译成testfun.o
+	shell) gcc -c test.c    将test.c编译成test.o
+	shell) gcc -o testfun.o test.o -o test  将testfun.o和test.o链接成test 
 
 	以上两种方法相比较, 第一中方法编译时需要所有文件重新编译,
 	而第二种方法可以只重新编译修改的文件, 未修改的文件不用重新编译.
