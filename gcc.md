@@ -1,29 +1,28 @@
 # Intro
-    gcc是gnu的c编译器, gcc在执行编译工作的时候, 总共需要4步:
-
-	1. Pre-Processing   预处理, 生成.i的文件.                       [预处理器cpp] 
-	2. Compiling		将预处理后的文件转换成汇编语言, 生成文件.s. [编译器egcs] 
-	3. Assembling 		由汇编变为目标代码(机器代码)生成.o文件.	    [汇编器as] 
-	4. Linking 		    连接目标代码, 生成可执行程序.               [链接器ld] 
+        gcc是gnu的c编译器, gcc在执行编译工作的时候, 总共需要4步:
+	    1. Pre-Processing   预处理, 生成.i的文件.                       [预处理器cpp]
+	    2. Compiling		将预处理后的文件转换成汇编语言, 生成文件.s. [编译器egcs]
+	    3. Assembling 		由汇编变为目标代码(机器代码)生成.o文件.	    [汇编器as]
+	    4. Linking 		    连接目标代码, 生成可执行程序.               [链接器ld]
 
 
 # 查看gcc编译优化的具体选项开关
-    gcc -c -Q -O1 --help=optimizers > /tmp/O1-opts
-    gcc -c -Q -O2 --help=optimizers > /tmp/O2-opts
-    diff /tmp/O1-opts /tmp/O2-opts | grep enabled
+        gcc -c -Q -O1 --help=optimizers > /tmp/O1-opts
+        gcc -c -Q -O2 --help=optimizers > /tmp/O2-opts
+        diff /tmp/O1-opts /tmp/O2-opts | grep enabled
 
 
 # gcc [options] [filenames] 
 ## -o FILE
-    生成指定的输出文件. 
-	shell) gcc test.c -o test
-    shell) gcc -S hello.c -o hello.asm
+        生成指定的输出文件
+	    shell) gcc test.c -o test
+        shell) gcc -S hello.c -o hello.asm
 
 ## -E
-    只激活预处理(即只运行预编译器). 不生成文件, 会打印到标准输出. 
-    如果需要保存, 可以用重定向方法或-o选项:
-    shell) gcc -E test.c > test.i
-    shell) gcc -E test.c -o test.i
+        只激活预处理(即只运行预编译器). 不生成文件, 会打印到标准输出.
+        如果需要保存, 可以用重定向方法或-o选项:
+        shell) gcc -E test.c > test.i
+        shell) gcc -E test.c -o test.i
 
 ## -S
     只激活预处理和编译. 即指把文件编译成为汇编代码.
