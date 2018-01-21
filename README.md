@@ -16,5 +16,8 @@
         -p 50   修改优先级为50(用户空间数字越大,优先级越高. 内核空间相反, 在bitmap上对应是99-50.)
         pid     进程id
 
-    4) nice/renice
+    4) renice/nice
+        renice -n -5 -g pid 可以修改线程运行的nice值
+        nice -n 5 ./a.out   直接在进程启动时设置nice值
+        
     5) taskset
