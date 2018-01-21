@@ -1,7 +1,7 @@
 # toolchain
 
 ## useful cmd
-    1) apropos timer    列出所有timer相关函数
+    1) $ apropos timer    列出所有timer相关函数
 
     2) ulimit
         $ ulimit -a 用来显示当前的各种用户进程限制
@@ -21,3 +21,9 @@
         # nice -n 5 ./a.out   直接在进程启动时设置nice值
         
     5) taskset
+        # taskset -a -p 01 pid  让pid进程内的所有线程都在cpu0上跑
+        # taskset -a -p 02 pid  让pid进程内的所有线程都在cpu1上跑
+        # taskset -a -p 03 pid  让pid进程内的所有线程都在cpu0,cpu1上跑
+
+        # taskset -a -cp 0,1 pid    让pid进程内的所有线程在cpu0,cpu1上跑
+                                    -c, --cpu-list
