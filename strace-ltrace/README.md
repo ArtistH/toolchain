@@ -6,7 +6,7 @@
 	strace ./a.out
 	ltrace ./a.out
 	 
-    同样的ltrace也可以把系统调用都打印出来, 使用-S参数
+    ltrace也可以把系统调用都打印出来, 使用-S参数
 	ltrace -S ./a.out
   
  
@@ -101,4 +101,4 @@
 # 4. Example
     shell) gcc main.c
     shell) ltrace ./a.out
-    观察可见_libc_start_main才是程序入口, main函数中de printf被编译器优化为puts().
+    观察可见_libc_start_main才是程序入口, main函数中的printf被编译器优化为puts().
