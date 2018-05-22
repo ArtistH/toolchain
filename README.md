@@ -2,6 +2,12 @@
 
 ## useful cmd
     1) $ apropos timer    列出所有timer相关函数
+	出现问题:
+		timer: nothing appropriate.
+	解决方法:
+		Install man-pages
+		# mandb
+	
 
     2) ulimit
         $ ulimit -a 用来显示当前的各种用户进程限制
