@@ -39,3 +39,18 @@
     1) smem
         # smem --pie=command    生成饼状图
         # smem --bar=command    生成柱状图
+
+
+## io
+    1) ftrace
+
+    2) blktrace
+	# Install blktrace
+	# blktrace -d /dev/sdaX -o - | blkparse -i - > X.trace
+	# dd 
+
+	启动dd, 使用blktrace抓取dd过程.
+
+    3) blkcat
+	# Install sleuthkit
+	# blkcat /dev/sdaX blockNO.
