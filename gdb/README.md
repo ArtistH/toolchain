@@ -1,8 +1,8 @@
 # 常用操作
     (gdb) ctrl+x, a 开启gdbtui
-    (gdb) ctrl+x, 2 打开汇编窗口
+    (gdb) ctrl+x, 2 打开汇编指令级窗口
 
-    (gdb) b(break) 设置断点
+    (gdb) b(break)  设置断点
     (gdb) r(run)
 
     (gdb) s(step)   单步跟踪进入(执行一行源程序代码, 如果此行代码中有函数调用, 则进入该函数)
@@ -11,13 +11,13 @@
     (gdb) ni        命令类似于n命令
                     所不同的是, 这两个命令(si/ni)所针对的是汇编指令, 而s/n针对的是源代码.
 
-    (gdb) bt(backtrace)    栈回溯
+    (gdb) bt(backtrace)     栈回溯
+
+    (gdb) i(info) b         查看断点
+          i(info) thread    查看线程
+    (gdb) d(delete)         后接断点号, 删除断点.
 
     (gdb) watch 只要watch的变量被修改, 就会自动设置断点停住.
-
-    (gdb) i(info) 
-
-    (gdb) d(delete) 后接断点号, 删除断点.
 
     (gdb) c(continue)
 
