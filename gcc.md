@@ -1,9 +1,9 @@
 # Intro
-    gcc是gnu的c编译器，gcc在执行编译工作的时候，总共需要4步：
-    1. Pre-Processing   [预处理器cpp] 预处理，生成.i的文件。	
-	2. Compiling		[编译器ccl] 将预处理后的文件转换成汇编语言，生成.s文件。		
-	3. Assembling 		[汇编器as] 由汇编变为目标代码(机器代码)生成.o文件。			
-	4. Linking 		    [链接器ld] 连接目标代码，生成可执行程序。					
+    gcc是gnu的c编译器, gcc在执行编译工作的时候, 总共需要4步:
+    1. Pre-Processing [预处理器cpp] 预处理, 生成.i的文件.
+	2. Compiling [编译器ccl] 将预处理后的文件转换成汇编语言, 生成.s文件.
+	3. Assembling [汇编器as] 由汇编变为目标代码(机器代码)生成.o文件
+	4. Linking [链接器ld] 连接目标代码, 生成可执行程序.
 
 # gcc [options] [filenames] (80%)
 <table>
