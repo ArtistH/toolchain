@@ -172,7 +172,7 @@ PART2: Plugin
 	</tr>
 </table>
 
-    ctrl+o  回到上次位置<br>
+    ctrl+o  回到上次位置
     ctrl+i  前进
 
 ## 2. Manage with Vundle(See .vimrc)
