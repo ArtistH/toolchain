@@ -124,7 +124,6 @@ PART2: Plugin
     5) :cs add src/cscope.out src --- 将生成的cscope文件导入到vim(因在cscope_maps.vim中有设置, 可以不执行)
     6) cscope find用法:
     :cs f(ind) s|g|d|c|t|e|f|i name 
-
 <table>
 	<tr>
 		<th>command</th>
@@ -172,6 +171,7 @@ PART2: Plugin
 		<th>ctrl-\ i</th>
 	</tr>
 </table>
+
     ctrl+o  回到上次位置<br>
     ctrl+i  前进
 
