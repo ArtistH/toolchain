@@ -2,189 +2,177 @@ PART1: Using
 ------------
 
 ## 1. about save && exit
-    :wq!    --- Ç¿ÖÆ±£´æÍË³ö
-    :wq     --- ±£´æÍË³ö(:x Óë´Ë¹¦ÄÜÏàÍ¬)
-    :q      --- ÍË³ö
-    :q!     --- Ç¿ÖÆÍË³ö
+    :wq!    --- å¼ºåˆ¶ä¿å­˜é€€å‡º
+    :wq     --- ä¿å­˜é€€å‡º(:x ä¸Žæ­¤åŠŸèƒ½ç›¸åŒ)
+    :q      --- é€€å‡º
+    :q!     --- å¼ºåˆ¶é€€å‡º
 
 ## 2. about move
-    h   --- ÔÚµ±Ç°ÐÐÏò×óÒÆ¶¯Ò»¸ö×Ö·û
-    j 	--- ÒÆ¶¯µ½ÏÂÒ»ÐÐ
-    k 	--- ÒÆ¶¯µ½ÉÏÒ»ÐÐ
-    l 	--- ÔÚµ±Ç°ÐÐÏòÓÒÒÆ¶¯Ò»¸ö×Ö·û
+    h   --- åœ¨å½“å‰è¡Œå‘å·¦ç§»åŠ¨ä¸€ä¸ªå­—ç¬¦
+    j 	--- ç§»åŠ¨åˆ°ä¸‹ä¸€è¡Œ
+    k 	--- ç§»åŠ¨åˆ°ä¸Šä¸€è¡Œ
+    l 	--- åœ¨å½“å‰è¡Œå‘å³ç§»åŠ¨ä¸€ä¸ªå­—ç¬¦
 
-    w   --- ÒÆÖÁÏÂÒ»¸öµ¥´ÊµÄ´ÊÊ×
-    b   --- ÌøÖÁµ±Ç°»òÇ°Ò»¸öµ¥´ÊµÄ´ÊÊ×
-    e   --- ÌøÖÁµ±Ç°»òÏÂÒ»¸öµ¥´ÊµÄ´ÊÎ²
+    w   --- ç§»è‡³ä¸‹ä¸€ä¸ªå•è¯çš„è¯é¦–
+    b   --- è·³è‡³å½“å‰æˆ–å‰ä¸€ä¸ªå•è¯çš„è¯é¦–
+    e   --- è·³è‡³å½“å‰æˆ–ä¸‹ä¸€ä¸ªå•è¯çš„è¯å°¾
 
-    :n  --- ½«¹â±ê¶¨Î»µ½µÚnÐÐ
-    0   --- ½«¹â±ê¶¨Î»µ½±¾ÐÐµÄÐÐÊ×
-    $   --- ½«¹â±ê¶¨Î»µ½±¾ÐÐµÄÐÐÎ²
-    gg  --- ½«¹â±ê¶¨Î»µ½×îºóÒ»ÐÐ(:0 Óë´Ë¹¦ÄÜÏàÍ¬)
-    G   --- ½«¹â±ê¶¨Î»µ½×îºóÒ»ÐÐ(:$ Óë´Ë¹¦ÄÜÏàÍ¬)
+    :n  --- å°†å…‰æ ‡å®šä½åˆ°ç¬¬nè¡Œ
+    0   --- å°†å…‰æ ‡å®šä½åˆ°æœ¬è¡Œçš„è¡Œé¦–
+    $   --- å°†å…‰æ ‡å®šä½åˆ°æœ¬è¡Œçš„è¡Œå°¾
+    gg  --- å°†å…‰æ ‡å®šä½åˆ°æœ€åŽä¸€è¡Œ(:0 ä¸Žæ­¤åŠŸèƒ½ç›¸åŒ)
+    G   --- å°†å…‰æ ‡å®šä½åˆ°æœ€åŽä¸€è¡Œ(:$ ä¸Žæ­¤åŠŸèƒ½ç›¸åŒ)
 
-    H	--- ½«¹â±ê¶¨Î»µ½ÆÁÄ»µÄ¶¥¶Ë
-    M   --- ½«¹â±ê¶¨Î»µ½ÆÁÄ»µÄÖÐ¼ä
-    L   --- ½«¹â±ê¶¨Î»µ½ÆÁÄ»µÄµ×¶Ë
+    H	--- å°†å…‰æ ‡å®šä½åˆ°å±å¹•çš„é¡¶ç«¯
+    M   --- å°†å…‰æ ‡å®šä½åˆ°å±å¹•çš„ä¸­é—´
+    L   --- å°†å…‰æ ‡å®šä½åˆ°å±å¹•çš„åº•ç«¯
 
-    Ctrl+f  --- ÏòÏÂ·­Ò»ÆÁ
-    Ctrl+b  --- ÏòÉÏ·­Ò»ÆÁ
-    Ctrl+d  --- ÏòÏÂ·­°ëÆÁ
-    Ctrl+u  --- ÏòÉÏ·­°ëÆÁ
+    Ctrl+f  --- å‘ä¸‹ç¿»ä¸€å±
+    Ctrl+b  --- å‘ä¸Šç¿»ä¸€å±
+    Ctrl+d  --- å‘ä¸‹ç¿»åŠå±
+    Ctrl+u  --- å‘ä¸Šç¿»åŠå±
 
 ## 3. about search
-    / --- ºóÃæ¸úÒª²éÕÒµÄ¶«Î÷, ÔÚÎÄ¼þÖÐÏòÇ°ËÑË÷
-    ? --- ºóÃæ¸úÒª²éÕÒµÄ¶«Î÷, ÔÚÎÄ¼þÖÐÏòºóËÑË÷
-    n --- ÏòÇ°ÖØ¸´ËÑË÷
-    N --- ÏòºóÖØ¸´ËÑË÷
+    / --- åŽé¢è·Ÿè¦æŸ¥æ‰¾çš„ä¸œè¥¿, åœ¨æ–‡ä»¶ä¸­å‘å‰æœç´¢
+    ? --- åŽé¢è·Ÿè¦æŸ¥æ‰¾çš„ä¸œè¥¿, åœ¨æ–‡ä»¶ä¸­å‘åŽæœç´¢
+    n --- å‘å‰é‡å¤æœç´¢
+    N --- å‘åŽé‡å¤æœç´¢
 
 ## 4. about cp
-    yy  		--- ¸´ÖÆ¹â±êµ±Ç°ÐÐ
-    nyy 		--- ¸´ÖÆ¹â±êµ±Ç°ÐÐµ½µ±Ç°ÐÐÒÔÏÂµÄn-1ÐÐ
-    :1,100 co 200   --- ½«1~100µÄÄÚÈÝ¸´ÖÆµ½µÚ200ÐÐ
-    :100,102 co $   --- ½«100~102ÐÐµÄÄÚÈÝ¸´ÖÆµ½×îºóÒ»ÐÐ
+    yy  		--- å¤åˆ¶å…‰æ ‡å½“å‰è¡Œ
+    nyy 		--- å¤åˆ¶å…‰æ ‡å½“å‰è¡Œåˆ°å½“å‰è¡Œä»¥ä¸‹çš„n-1è¡Œ
+    :1,100 co 200   --- å°†1~100çš„å†…å®¹å¤åˆ¶åˆ°ç¬¬200è¡Œ
+    :100,102 co $   --- å°†100~102è¡Œçš„å†…å®¹å¤åˆ¶åˆ°æœ€åŽä¸€è¡Œ
 
 ## 5. about paste
-    p --- Õ³Ìùµ½µ±Ç°ÐÐµÄÏÂÒ»ÐÐ
-    P --- Õ³Ìùµ½µ±Ç°ÐÐµÄÉÏÒ»ÐÐ
+    p --- ç²˜è´´åˆ°å½“å‰è¡Œçš„ä¸‹ä¸€è¡Œ
+    P --- ç²˜è´´åˆ°å½“å‰è¡Œçš„ä¸Šä¸€è¡Œ
 
 ## 6. about delete & cut
-    dd  --- É¾³ýµ±Ç°ÐÐ
-    ndd --- É¾³ý¹â±êµ±Ç°ÐÐµ½µ±Ç°ÐÐÒÔÏÂµÄn-1ÐÐ
+    dd  --- åˆ é™¤å½“å‰è¡Œ
+    ndd --- åˆ é™¤å…‰æ ‡å½“å‰è¡Œåˆ°å½“å‰è¡Œä»¥ä¸‹çš„n-1è¡Œ
 
-    dw  --- É¾³ýÒ»¸öµ¥´Ê
-    ndw --- É¾³ýn¸öµ¥´Ê
+    dw  --- åˆ é™¤ä¸€ä¸ªå•è¯
+    ndw --- åˆ é™¤nä¸ªå•è¯
 
-    x   --- É¾³ýÒ»¸ö×Ö·û
-    nx  --- É¾³ýn¸ö×Ö·û
+    x   --- åˆ é™¤ä¸€ä¸ªå­—ç¬¦
+    nx  --- åˆ é™¤nä¸ªå­—ç¬¦
 
-    dG  --- É¾³ýµ±Ç°¹â±êµ½ÎÄ¼þÄ©Î²µÄËùÓÐÄÚÈÝ
+    dG  --- åˆ é™¤å½“å‰å…‰æ ‡åˆ°æ–‡ä»¶æœ«å°¾çš„æ‰€æœ‰å†…å®¹
 
-    d0  --- É¾³ýµ±Ç°¹â±êµ½±¾ÐÐÐÐÊ×µÄËùÓÐÄÚÈÝ
-    d$  --- É¾³ýµ±Ç°¹â±êµ½±¾ÐÐÐÐÎ²µÄËùÓÐÄÚÈÝ
+    d0  --- åˆ é™¤å½“å‰å…‰æ ‡åˆ°æœ¬è¡Œè¡Œé¦–çš„æ‰€æœ‰å†…å®¹
+    d$  --- åˆ é™¤å½“å‰å…‰æ ‡åˆ°æœ¬è¡Œè¡Œå°¾çš„æ‰€æœ‰å†…å®¹
 
-    :1,100d 	    --- É¾³ý1~100ÐÐ
-    :100d   	    --- É¾³ýµÚ100ÐÐ
+    :1,100d 	    --- åˆ é™¤1~100è¡Œ
+    :100d   	    --- åˆ é™¤ç¬¬100è¡Œ
 
-    :1,100 mo $ 	--- ½«1~100ÐÐµÄÄÚÈÝÒÆ¶¯µ½×îºóÒ»ÐÐ
+    :1,100 mo $ 	--- å°†1~100è¡Œçš„å†…å®¹ç§»åŠ¨åˆ°æœ€åŽä¸€è¡Œ
 
-    :g/^$/d		    --- É¾³ýÎÄ¼þÖÐ¿ÕÐÐ
+    :g/^$/d		    --- åˆ é™¤æ–‡ä»¶ä¸­ç©ºè¡Œ
 
 ## 7. about insert
-    i --- ÔÚµ±Ç°Î»ÖÃµÄ×Ö·ûÇ°Ãæ½øÈë²åÈëÄ£Ê½
-    I --- ÔÚµ±Ç°ÐÐµÄ¿ªÍ·½øÐÐ²åÈë
-    a --- ÔÚµ±Ç°Î»ÖÃµÄ×Ö·ûºóÃæ½øÈë²åÈëÄ£Ê½
-    A --- ÔÚµ±Ç°ÐÐµÄ½áÎ²½øÐÐ²åÈë
-    o --- ÔÚµ±Ç°ÐÐÏÂÃæ´ò¿ªÒ»¸öÐÂÐÐ½øÐÐ²åÈë
-    O --- ÔÚµ±Ç°ÐÐÉÏÃæ´ò¿ªÒ»¸öÐÂÐÐ½øÐÐ²åÈë
+    i --- åœ¨å½“å‰ä½ç½®çš„å­—ç¬¦å‰é¢è¿›å…¥æ’å…¥æ¨¡å¼
+    I --- åœ¨å½“å‰è¡Œçš„å¼€å¤´è¿›è¡Œæ’å…¥
+    a --- åœ¨å½“å‰ä½ç½®çš„å­—ç¬¦åŽé¢è¿›å…¥æ’å…¥æ¨¡å¼
+    A --- åœ¨å½“å‰è¡Œçš„ç»“å°¾è¿›è¡Œæ’å…¥
+    o --- åœ¨å½“å‰è¡Œä¸‹é¢æ‰“å¼€ä¸€ä¸ªæ–°è¡Œè¿›è¡Œæ’å…¥
+    O --- åœ¨å½“å‰è¡Œä¸Šé¢æ‰“å¼€ä¸€ä¸ªæ–°è¡Œè¿›è¡Œæ’å…¥
 
 ## 8. about undo
-    u       --- ³·ÏúÉÏÒ»´ÎµÄ¸ü¸Ä
-    Ctrl+r  --- ³·Ïû×î½üÒ»´Î³·Ïû²Ù×÷
+    u       --- æ’¤é”€ä¸Šä¸€æ¬¡çš„æ›´æ”¹
+    Ctrl+r  --- æ’¤æ¶ˆæœ€è¿‘ä¸€æ¬¡æ’¤æ¶ˆæ“ä½œ
 
 ## 9. about replace
-    (regexpÊÇÒªÆ¥ÅäµÄÊ½Ñù, replacementÊÇÒªÌæ»»µÄ×Ö·û´®)
-    :s/regexp/replacement  	 --- Ìæ»»µ±Ç°ÐÐ³öÏÖµÄµÚÒ»¸öÊ½Ñù
-    :s/regexp/replacement/g	 --- Ìæ»»µ±Ç°ÐÐËùÓÐµÄÆ¥Åä
-    :%s/regexp/replacement/g --- Ìæ»»ÎÄ¼þÖÐËùÓÐÆ¥ÅäÊ½Ñù
+    (regexpæ˜¯è¦åŒ¹é…çš„å¼æ ·, replacementæ˜¯è¦æ›¿æ¢çš„å­—ç¬¦ä¸²)
+    :s/regexp/replacement  	 --- æ›¿æ¢å½“å‰è¡Œå‡ºçŽ°çš„ç¬¬ä¸€ä¸ªå¼æ ·
+    :s/regexp/replacement/g	 --- æ›¿æ¢å½“å‰è¡Œæ‰€æœ‰çš„åŒ¹é…
+    :%s/regexp/replacement/g --- æ›¿æ¢æ–‡ä»¶ä¸­æ‰€æœ‰åŒ¹é…å¼æ ·
 
 ## 10. about commit
-    ¶àÐÐ×¢ÊÍ:
-	1) Ê×ÏÈ°´esc½øÈëÃüÁîÐÐÄ£Ê½ÏÂ, °´ÏÂCtrl+v, ½øÈëÁÐ(Ò²½ÐÇø¿é)Ä£Ê½;
-	2) ÔÚÐÐÊ×Ê¹ÓÃÉÏÏÂ¼üÑ¡ÔñÐèÒª×¢ÊÍµÄ¶àÐÐ;
-	3) °´ÏÂ¼üÅÌ"I"¼ü, ½øÈë²åÈëÄ£Ê½;
-	4) È»ºóÊäÈë×¢ÊÍ·û("//", "#"µÈ);
-	5) ×îºó°´ÏÂ"Esc"¼ü.
-	×¢: ÔÚ°´ÏÂesc¼üºó, »áÉÔµÈÒ»»á²Å»á³öÏÖ×¢ÊÍ.
+    å¤šè¡Œæ³¨é‡Š:
+	1) é¦–å…ˆæŒ‰escè¿›å…¥å‘½ä»¤è¡Œæ¨¡å¼ä¸‹, æŒ‰ä¸‹Ctrl+v, è¿›å…¥åˆ—(ä¹Ÿå«åŒºå—)æ¨¡å¼;
+	2) åœ¨è¡Œé¦–ä½¿ç”¨ä¸Šä¸‹é”®é€‰æ‹©éœ€è¦æ³¨é‡Šçš„å¤šè¡Œ;
+	3) æŒ‰ä¸‹é”®ç›˜"I"é”®, è¿›å…¥æ’å…¥æ¨¡å¼;
+	4) ç„¶åŽè¾“å…¥æ³¨é‡Šç¬¦("//", "#"ç­‰);
+	5) æœ€åŽæŒ‰ä¸‹"Esc"é”®.
+	æ³¨: åœ¨æŒ‰ä¸‹escé”®åŽ, ä¼šç¨ç­‰ä¸€ä¼šæ‰ä¼šå‡ºçŽ°æ³¨é‡Š.
  
-    É¾³ý¶àÐÐ×¢ÊÍ:
-	1) Ê×ÏÈ°´esc½øÈëÃüÁîÐÐÄ£Ê½ÏÂ, °´ÏÂCtrl+v, ½øÈëÁÐÄ£Ê½;
-	2) Ñ¡¶¨ÒªÈ¡Ïû×¢ÊÍµÄ¶àÐÐ;
-	3) °´ÏÂ"x"»òÕß"d".
-	×¢: Èç¹ûÊÇ"//"×¢ÊÍ, ÄÇÐèÒªÖ´ÐÐÁ½´Î¸Ã²Ù×÷, Èç¹ûÊÇ"#"×¢ÊÍ, Ò»´Î¼´¿É.
+    åˆ é™¤å¤šè¡Œæ³¨é‡Š:
+	1) é¦–å…ˆæŒ‰escè¿›å…¥å‘½ä»¤è¡Œæ¨¡å¼ä¸‹, æŒ‰ä¸‹Ctrl+v, è¿›å…¥åˆ—æ¨¡å¼;
+	2) é€‰å®šè¦å–æ¶ˆæ³¨é‡Šçš„å¤šè¡Œ;
+	3) æŒ‰ä¸‹"x"æˆ–è€…"d".
+	æ³¨: å¦‚æžœæ˜¯"//"æ³¨é‡Š, é‚£éœ€è¦æ‰§è¡Œä¸¤æ¬¡è¯¥æ“ä½œ, å¦‚æžœæ˜¯"#"æ³¨é‡Š, ä¸€æ¬¡å³å¯.
 
 ## 11. about split screen
-    Ctrl+w, s   --- Ë®Æ½·Ö¸î´°¿Ú(:split)
-    Ctrl+w, v   --- ´¹Ö±·Ö¸î´°¿Ú(:vsplit)
-    :qa         --- ¹Ø±ÕËùÓÐ´°¿Ú
+    Ctrl+w, s   --- æ°´å¹³åˆ†å‰²çª—å£(:split)
+    Ctrl+w, v   --- åž‚ç›´åˆ†å‰²çª—å£(:vsplit)
+    :qa         --- å…³é—­æ‰€æœ‰çª—å£
 
 
 
 PART2: Plugin
 -------------
 
-## 1. grep
-    1) cp grep/grep.vim ~/.vim/plugin/
-    2) add the follow line to ~/.vimrc
-	________________________________
-	nnoremap <silent> <F3> :Grep<CR> 
-	________________________________
-
-    F3 --- ¿ªÆôgrep
-
-## 2. ctags
-    0) INSTALL ctags
-    1) cd src                   --- ½øÈëÔ´ÂëÄ¿Â¼
-    2) ctags -R --fields=+ls    --- Éú³ÉtagsÎÄ¼þ, --fields=+lsÓÃÓÚechofunc
-    3) :set tags=src/tags       --- ÉèÖÃtags
-    4) ctrl-]                   --- Ìø×ªµ½º¯Êý¶¨Òå´¦
-    5) ctrl-t                   --- Ìø»Ø
-
-## 3. Manage with Vundle(See .vimrc)
-    0) ÏÂÔØ°²×°vundle
-    git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-    È»ºó½øÈëvimÖ´ÐÐ	:BundleInstall
-
-    1) taglist(ÐèÒªÏÈ°²×°ctags)
-    let Tlist_Show_One_File = 1     "²»Í¬Ê±ÏÔÊ¾¶à¸öÎÄ¼þµÄtag, Ö»ÏÔÊ¾µ±Ç°ÎÄ¼þµÄ
-    let Tlist_Exit_OnlyWindow = 1   "Èç¹ûtaglist´°¿ÚÊÇ×îºóÒ»¸ö´°¿Ú, ÔòÍË³övim
-    let Tlist_Use_Right_Window = 1  "ÔÚÓÒ²à´°¿ÚÖÐÏÔÊ¾taglist´°¿Ú 
-    nmap tl :Tlist<cr>              "ÉèÖÃ¿ì½Ý¼ü 
-
-    :Tlist  --- ¿ªÆôtaglist(¿ì½Ý¼ü tl)
-    o       --- ÔÚÒ»¸öÐÂ´ò¿ªµÄ´°¿ÚÖÐÏÔÊ¾¹â±êÏÂtag
-    <Space> --- ÏÔÊ¾¹â±êÏÂtagµÄÔ­ÐÍ¶¨Òå
-    u       --- ¸üÐÂtaglist´°¿ÚÖÐµÄtag
-    s       --- ¸ü¸ÄÅÅÐò·½Ê½, ÔÚ°´Ãû×ÖÅÅÐòºÍ°´³öÏÖË³ÐòÅÅÐò¼äÇÐ»»
-    x       --- taglist´°¿Ú·Å´óºÍËõÐ¡, ·½±ã²é¿´½Ï³¤µÄtag
-    +       --- ´ò¿ªÒ»¸öÕÛµþ
-    -       --- ½«tagÕÛµþÆðÀ´
-    *       --- ´ò¿ªËùÓÐµÄÕÛµþ
-    =       --- ½«ËùÓÐtagÕÛµþÆðÀ´
-    q       --- ¹Ø±Õtaglist´°¿Ú
-
-## 4. cscope(´ýÓÃ)
+## 1. cscope
     0) INSTALL cscope
-    1) cp cscope/cscope_maps.vim ~/.vim/plugin/
+    1) cp cscope_maps.vim ~/.vim/plugin/
     2) add the follow line to ~/.vimrc to use the quickfix to show the cscope result
-	    _____________________________________
-	    set cscopequickfix=s-,c-,d-,i-,t-,e- 
-	    _____________________________________
+		set cscopequickfix=s-,c-,d-,i-,t-,e- 
+
     3) cd src
-    4) cscope -Rbkq
-        -R : ÔÚÉú³ÉË÷ÒýÎÄ¼þÊ±, ËÑË÷×ÓÄ¿Â¼Ê÷ÖÐµÄ´úÂë
-        -b : Ö»Éú³ÉË÷ÒýÎÄ¼þ, ²»½øÈëcscopeµÄ½çÃæ
-        -k : ÔÚÉú³ÉË÷ÒýÎÄ¼þÊ±, ²»ËÑË÷/usr/includeÄ¿Â¼
-        -q : Éú³Écscope.in.outºÍcscope.po.outÎÄ¼þ, ¼Ó¿ìcscopeµÄË÷ÒýËÙ¶È
-    5) :cs add src/cscope.out src --- ½«Éú³ÉµÄcscopeÎÄ¼þµ¼Èëµ½vim(ÒòÔÚcscope_maps.vimÖÐÓÐÉèÖÃ, ¿ÉÒÔ²»Ö´ÐÐ)
-    6) cscope findÓÃ·¨:
-    :cs find s|g|d|c|t|e|f|i name 
-	_________________________________________________
-	ËµÃ÷                                    |¿ì½Ý¼ü
-	-------------------------------------------------
-	0 »ò s |²éÕÒ·ûºÅ                        |ctrl-\ s	
-	-------------------------------------------------
-	1 »ò g |²éÕÒÈ«¾ÖµÄ¶¨Òå                  |ctrl-\ g
-	-------------------------------------------------
-	2 »ò d |²é¿´Ö¸¶¨º¯Êýµ÷ÓÃÁËÄÄÐ©º¯Êý      |ctrl-\ d
-	-------------------------------------------------
-	3 »ò c |²é¿´Ö¸¶¨º¯Êý±»ÄÄÐ©º¯ÊýËùµ÷ÓÃ    |ctrl-\ c
-	-------------------------------------------------
-	4 »ò t |²éÕÒ×Ö·û´®                      |ctrl-\ t
-	-------------------------------------------------
-	6 »ò e |²éÕÒÕýÔò±í´ïÊ½                  |ctrl-\ e
-	-------------------------------------------------
-	7 »ò f |²éÕÒÎÄ¼þ                        |ctrl-\ f
-	-------------------------------------------------
-	8 »ò i |²é¿´Ö¸¶¨µÄÎÄ¼þ±»ÄÄÐ©ÎÄ¼þinclude |ctrl-\ i 
-	_________________________________________________
+    4) cscope-indexer -r
+    5) :cs add src/cscope.out src --- å°†ç”Ÿæˆçš„cscopeæ–‡ä»¶å¯¼å…¥åˆ°vim(å› åœ¨cscope_maps.vimä¸­æœ‰è®¾ç½®, å¯ä»¥ä¸æ‰§è¡Œ)
+    6) cscope findç”¨æ³•:
+    :cs f(ind) s|g|d|c|t|e|f|i name 
+
+<table>
+	<tr>
+		<th>command</th>
+		<th>è¯´æ˜Ž</th>
+		<th>å¿«æ·é”®</th>
+	</tr>
+	<tr>
+		<th>0 æˆ– s</th>
+		<th>æŸ¥æ‰¾ç¬¦å·</th>
+		<th>ctrl-\ s</th>
+	</tr>
+	<tr>
+		<th>1 æˆ– g</th>
+		<th>æŸ¥æ‰¾å…¨å±€çš„å®šä¹‰</th>
+		<th>ctrl-\ g</th>
+	</tr>
+	<tr>
+		<th>2 æˆ– d</th>
+		<th>æŸ¥çœ‹æŒ‡å®šå‡½æ•°è°ƒç”¨äº†å“ªäº›å‡½æ•°</th>
+		<th>ctrl-\ d</th>
+	</tr>
+	<tr>
+		<th>3 æˆ– c</th>
+		<th>æŸ¥çœ‹æŒ‡å®šå‡½æ•°è¢«å“ªäº›å‡½æ•°æ‰€è°ƒç”¨</th>
+		<th>ctrl-\ c</th>
+	</tr>
+	<tr>
+		<th>4 æˆ– t</th>
+		<th>æŸ¥æ‰¾å­—ç¬¦ä¸²</th>
+		<th>ctrl-\ t</th>
+	</tr>
+	<tr>
+		<th>6 æˆ– e</th>
+		<th>æŸ¥æ‰¾æ­£åˆ™è¡¨è¾¾å¼</th>
+		<th>ctrl-\ e</th>
+	</tr>
+	<tr>
+		<th>7 æˆ– f</th>
+		<th>æŸ¥æ‰¾æ–‡ä»¶</th>
+		<th>ctrl-\ f</th>
+	</tr>
+	<tr>
+		<th>8 æˆ– i</th>
+		<th>æŸ¥çœ‹æŒ‡å®šçš„æ–‡ä»¶è¢«å“ªäº›æ–‡ä»¶include</th>
+		<th>ctrl-\ i</th>
+	</tr>
+</table>
+
+## 2. Manage with Vundle(See .vimrc)
+    git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+    ç„¶åŽè¿›å…¥vimæ‰§è¡Œ	:BundleInstall
