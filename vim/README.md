@@ -172,6 +172,8 @@ PART2: Plugin
 		<th>ctrl-\ i</th>
 	</tr>
 </table>
+    ctrl+o  回到上次位置
+    ctrl+i  前进
 
 ## 2. Manage with Vundle(See .vimrc)
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
