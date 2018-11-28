@@ -115,17 +115,15 @@ PART2: Plugin
 
 ## 1. ctags
     0) INSTALL ctags
-    1) cd src                   进入源码目录
-    2) ctags -R --fields=+ls    生成tags文件, --fields=+ls用于echofunc(与cscope-indexer -r执行一个即可)
-    3) :set tags=src/tags       设置tags(vundle安装了taglist.vim, 可以不执行)
+    1) cd src; ctags -R --fields=+ls    生成tags文件, --fields=+ls用于echofunc(采用cscope的索引, 所以一般不执行)
+    2) :set tags=src/tags               设置tags(vundle安装了taglist.vim, 可以不执行)
     4) ctrl-]   跳转到函数定义处
     5) ctrl-t   跳回
 
 ## 2. cscope
     0) INSTALL cscope
-    1) cd src
-    2) cscope-indexer -r(ctags -R --fields=+ls执行一个即可)
-    3) :cs add src/cscope.out src   将生成的cscope文件导入到vim(因在vimrc中有设置, 可以不执行)
+    1) cd src; cscope-indexer -r
+    2) :cs add src/cscope.out src   将生成的cscope文件导入到vim(因在vimrc中有设置, 可以不执行)
     4) cscope find用法:
     :cs f(ind) s|g|d|c|t|e|f|i name 
 <table>
