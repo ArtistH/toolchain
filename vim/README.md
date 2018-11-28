@@ -113,16 +113,20 @@ PART1: Using
 PART2: Plugin
 -------------
 
-## 1. cscope
-    0) INSTALL cscope
-    1) cp cscope_maps.vim ~/.vim/plugin/
-    2) add the follow line to ~/.vimrc to use the quickfix to show the cscope result
-		set cscopequickfix=s-,c-,d-,i-,t-,e- 
+## 1. ctags
+    0) INSTALL ctags
+    1) cd src                   进入源码目录
+    2) ctags -R --fields=+ls    生成tags文件, --fields=+ls用于echofunc(与cscope-indexer -r执行一个即可)
+    3) :set tags=src/tags       设置tags(vundle安装了taglist.vim, 可以执行)
+    4) ctrl-]   跳转到函数定义处
+    5) ctrl-t   跳回
 
-    3) cd src
-    4) cscope-indexer -r
-    5) :cs add src/cscope.out src --- 将生成的cscope文件导入到vim(因在cscope_maps.vim中有设置, 可以不执行)
-    6) cscope find用法:
+## 2. cscope
+    0) INSTALL cscope
+    1) cd src
+    2) cscope-indexer -r(ctags -R --fields=+ls执行一个即可)
+    3) :cs add src/cscope.out src   将生成的cscope文件导入到vim(因在vimrc中有设置, 可以不执行)
+    4) cscope find用法:
     :cs f(ind) s|g|d|c|t|e|f|i name 
 <table>
 	<tr>
@@ -172,9 +176,9 @@ PART2: Plugin
 	</tr>
 </table>
 
-    ctrl+o  回到上次位置
-    ctrl+i  前进
+    5) ctrl+o  回到上次位置
+    6) ctrl+i  前进
 
-## 2. Manage with Vundle(See .vimrc)
+## 3. Manage with Vundle(See .vimrc)
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
     然后进入vim执行	:BundleInstall

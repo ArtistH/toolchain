@@ -30,6 +30,13 @@ call vundle#rc()
 Bundle 'gmarik/vundle'           
 
 " My Bundles here:
+" original repos on github
+Bundle 'vim-scripts/taglist.vim'
+let Tlist_Show_One_File = 1
+let Tlist_Exit_OnlyWindow = 1
+let Tlist_Use_Right_Window = 1
+nmap tl :Tlist<cr>
+
 Bundle 'scrooloose/nerdtree'
 let NERDTreeWinPos='left'
 let NERDTreeWinSize=30
@@ -37,6 +44,7 @@ map <F2> :NERDTreeToggle<CR>
 
 Bundle 'bling/vim-airline'
 set laststatus=2
+
 
 "
 " Brief help
