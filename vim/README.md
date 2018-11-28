@@ -117,7 +117,7 @@ PART2: Plugin
     0) INSTALL ctags
     1) cd src                   进入源码目录
     2) ctags -R --fields=+ls    生成tags文件, --fields=+ls用于echofunc(与cscope-indexer -r执行一个即可)
-    3) :set tags=src/tags       设置tags(vundle安装了taglist.vim, 可以执行)
+    3) :set tags=src/tags       设置tags(vundle安装了taglist.vim, 可以不执行)
     4) ctrl-]   跳转到函数定义处
     5) ctrl-t   跳回
 
