@@ -112,19 +112,14 @@ PART1: Using
 
 PART2: Plugin
 -------------
+## Manage with Vundle(See .vimrc)
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    然后进入vim执行	:PluginInstall
 
-## 1. ctags
-    0) INSTALL ctags
-    1) cd src; ctags -R --fields=+ls    生成tags文件, --fields=+ls用于echofunc(采用cscope的索引, 所以一般不执行)
-    2) :set tags=src/tags               设置tags(vundle安装了taglist.vim, 可以不执行)
-    4) ctrl-]   跳转到函数定义处
-    5) ctrl-t   跳回
-
-## 2. cscope
+## cscope
     0) INSTALL cscope
     1) cd src; cscope-indexer -r
-    2) :cs add src/cscope.out src   将生成的cscope文件导入到vim(因在vimrc中有设置, 可以不执行)
-    4) cscope find用法:
+    2) cscope find用法:
     :cs f(ind) s|g|d|c|t|e|f|i name 
 <table>
 	<tr>
@@ -176,7 +171,3 @@ PART2: Plugin
 
     5) ctrl+o  回到上次位置
     6) ctrl+i  前进
-
-## 3. Manage with Vundle(See .vimrc)
-    git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-    然后进入vim执行	:BundleInstall
