@@ -22,6 +22,12 @@
     (gdb) c(continue)
 
 
+# with LD_PRELOAD
+    e.g.
+    (gdb) set environment LD_PRELOAD ./lsan-helper.so
+    (gdb) file a.out
+
+
 # 用gdb查看内存
     格式: x /nfu <addr>
 
