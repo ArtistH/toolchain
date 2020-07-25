@@ -53,7 +53,7 @@
 	</tr>	
     <tr>
 		<td>-w</td>
-		<td>不生成任何警告信息.</td>
+		<td>不生成任何警告信息</td>
 	</tr>
 	<tr>
 		<td>-Idir</td>
@@ -87,6 +87,10 @@
     <tr>
 		<td>-Umacro</td>
 		<td>相当于C语言中的#undef macro</td>
+	</tr>
+    <tr>
+		<td>-v -H</td>
+		<td>打印出头文件查找过程</td>
 	</tr>
 </table>
 
@@ -189,7 +193,7 @@
 	<tr>
 		<td>-include file</td>
 		<td>
-        功能就相当于在代码中使用#include.
+        功能就相当于在代码中使用#include.<br>
         $ gcc a.c -include a.h 
         </td>
 	</tr>
