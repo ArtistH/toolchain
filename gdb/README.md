@@ -21,15 +21,11 @@
 
     (gdb) c(continue)
 
-
-# with LD_PRELOAD
-    e.g.
-    (gdb) set environment LD_PRELOAD ./lsan-helper.so
-    (gdb) file a.out
+    (gdb) fin(ish)  把函数运行完成, 例如a()->b()->c(), c()函数中执行finish返回到b().
 
 
 # 用gdb查看内存
-    格式: x /nfu <addr>
+    格式: x/nfu <addr>
 
     说明:
     x是examine的缩写
@@ -42,7 +38,6 @@
         u 按十进制格式显示无符号整型
         o 按八进制格式显示变量
         t 按二进制格式显示变量
-        a 按十六进制格式显示变量
         i 指令地址格式
         c 按字符格式显示变量
         f 按浮点数格式显示变量
@@ -78,25 +73,36 @@
 
 # gdb call functions 
     gdb带call func能力
-    (gdb) call printf("hello world\n")
+    (gdb) call printf("hello gdb\n")
 
 
 # core-dump
-    training/debug/core-dump
     (1) 可以用下面的语句设置一下, 然后再运行程序便成生成core文件.
     shell) ulimit -c unlimited
 
     (2) set core pattern:
     shell) sudo sh -c 'echo "core" > /proc/sys/kernel/core_pattern'
 
-    (3) shell) gcc -g exam.c
-        shell) gdb ./a.out --core=core
+    (3) shell) gcc -g coredump.c
+        shell) gdb ./a.out -c core
+
 
 # gdb debug multithreads
-    training/thread/thread_life.c
-    shell) gcc -g thread_life.c -pthread
+    shell) gcc -g multipthread.c -pthread
     shell) gdb ./a.out
-    (gdb) info thread   查看线程数
+    (gdb) i(nfo) thread 查看线程数
     (gdb) thread 2      切换到线程2
-    (gdb) set set scheduler-locking on  锁住调度器, off放开
+    (gdb) set scheduler-locking on  锁住调度器, off放开
     (gdb) c(continue)   另一个线程会停住
+
+
+# gdb + qemu调试内核
+    调试模式启动qemu
+    shell) qemu -s -S
+    (gdb) gdb-multiarch vmlinux
+
+
+# with LD_PRELOAD
+    e.g.
+    (gdb) set environment LD_PRELOAD ./lsan-helper.so
+    (gdb) file a.out
