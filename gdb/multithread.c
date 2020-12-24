@@ -25,7 +25,7 @@ void* thread_fun(void* param)
 #else
 		sleep(1);
 
-#if 0 /* change to #if 1 for debugging core dump */
+#if 1 /* change to #if 1 for debugging core dump */
 		if (i==10){
 			volatile *p=0;
 			*p=0;

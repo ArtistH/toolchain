@@ -67,7 +67,7 @@
 
 
 # attach pid
-    shell) sudo gdb attach pid
+    $ sudo gdb attach pid
     执行后进程会停止, 跳到gdb执行.
 
 
@@ -78,18 +78,60 @@
 
 # core-dump
     (1) 可以用下面的语句设置一下, 然后再运行程序便成生成core文件.
-    shell) ulimit -c unlimited
+    $ ulimit -c unlimited
 
     (2) set core pattern:
-    shell) sudo sh -c 'echo "core" > /proc/sys/kernel/core_pattern'
+    $ sudo sh -c 'echo "/var/crash/coredump/core-%e-%p-%t" > /proc/sys/kernel/core_pattern'
+    注意要保证对core文件的存放目录有写权限才能生成core
 
-    (3) shell) gcc -g coredump.c
-        shell) gdb ./a.out -c core
+    (3) $ gcc -g multithread.c -pthread
+        $ sudo gdb ./a.out -c /var/crash/coredump/core-a.out-4305-1608812308
+        (gdb) thread apply all bt
+
+    (4) minicordump
+        # echo '|usr/sbin/minicoredumper %P %u %s %t %h %e' | sudo tee /proc/sys/kernel/core_parttern
 
 
-# gdb debug multithreads
-    shell) gcc -g multipthread.c -pthread
-    shell) gdb ./a.out
+# gdb debug MultiProcess
+    [4.11 Debugging Forks](https://sourceware.org/gdb/current/onlinedocs/gdb/Forks.html)
+    (1) detach-on-fork on 
+        on(default):    调试一个进程(调试哪个取决follow-fork-mode的设置)
+        off:            调试两个进程
+
+    (2) follow-fork-mode
+        parent(default)
+        child
+
+    (3) i inferiors
+        在deatch-on-fork off时父子进程都attach, 可以通过inferiors切换.
+        (gdb) inferiors num 在两进程中切换
+
+    $ gcc -g waitpid.c
+    $ gdb ./a.out
+    (gdb) show follow-fork-mode 
+    Debugger response to a program call of fork or vfork is "parent".
+    (gdb) show detach-on-fork
+    Whether gdb will detach the child of a fork is on.
+
+    (gdb) set follow-fork-mode child
+    (gdb) n
+    [Attaching after process 3944 fork to child process 3949]
+    [New inferior 2 (process 3949)]
+    [Detaching after fork from parent process 3944]
+    [Inferior 1 (process 3944) detached]
+    [Switching to process 3949]
+    (gdb) i inferiors
+    Num  Description       Executable
+    1    <null>            /home/august/toolchain/gdb/a.out
+  * 2    process 3949      /home/august/toolchain/gdb/a.out
+
+
+# gdb debug IPC(unix domain monitor)
+
+
+# gdb debug MultiThread
+    $ gcc -g multipthread.c -pthread
+    $ gdb ./a.out
     (gdb) i(nfo) thread 查看线程数
     (gdb) thread 2      切换到线程2
     (gdb) set scheduler-locking on  锁住调度器, off放开
@@ -98,11 +140,11 @@
 
 # gdb + qemu调试内核
     调试模式启动qemu
-    shell) qemu -s -S
+    $ qemu -s -S
     (gdb) gdb-multiarch vmlinux
 
 
-# with LD_PRELOAD
+# with LD\_PRELOAD
     e.g.
     (gdb) set environment LD_PRELOAD ./lsan-helper.so
     (gdb) file a.out
