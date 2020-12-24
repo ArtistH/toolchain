@@ -98,7 +98,19 @@
     ltrace与strace都可以指定PID, 即对运行中的程序进行跟踪.
     ltrace -p PID VS strace -p PID
 
-# 4. Example
-    shell) gcc main.c
-    shell) ltrace ./a.out
+
+# 4. strace, ltrace与多进程
+    -f          follow forks
+    -b execve   detach on execve syscall 一旦碰到exec, 后面则不再跟踪.
+
+    $ gcc -g shell_pipe.c
+    $ strace ./a.out ls cat 默认只会跟踪其中的父进程
+
+    $ strace -f ./a.out ls cat 强制follow forks, 这样父子进程都会跟踪
+    $ strace -b execve ./a.out ls cat
+
+
+# 5. Example
+    $ gcc main.c
+    $ ltrace ./a.out
     观察可见_libc_start_main才是程序入口, main函数中的printf被编译器优化为puts().
