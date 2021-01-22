@@ -1,3 +1,8 @@
+# 调试信息与符号表(gcc -g)
+    $ dwarfdump     dumps DWARF debug information of an ELF object
+    $ strip         去掉调试信息与符号表
+
+
 # 常用操作
     (gdb) ctrl+x, a 开启gdbtui
     (gdb) ctrl+x, 2 打开汇编指令级窗口
