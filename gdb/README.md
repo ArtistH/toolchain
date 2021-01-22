@@ -76,27 +76,11 @@
     (gdb) call printf("hello gdb\n")
 
 
-# core-dump
-    (1) 可以用下面的语句设置一下, 然后再运行程序便成生成core文件.
-    $ ulimit -c unlimited
-
-    (2) set core pattern:
-    $ sudo sh -c 'echo "/var/crash/coredump/core-%e-%p-%t" > /proc/sys/kernel/core_pattern'
-    注意要保证对core文件的存放目录有写权限才能生成core
-
-    (3) $ gcc -g multithread.c -pthread
-        $ sudo gdb ./a.out -c /var/crash/coredump/core-a.out-4305-1608812308
-        (gdb) thread apply all bt
-
-    (4) minicordump
-        # echo '|usr/sbin/minicoredumper %P %u %s %t %h %e' | sudo tee /proc/sys/kernel/core_parttern
-
-
 # gdb debug MultiProcess
     [4.11 Debugging Forks](https://sourceware.org/gdb/current/onlinedocs/gdb/Forks.html)
     (1) detach-on-fork on 
-        on(default):    调试一个进程(调试哪个取决follow-fork-mode的设置)
-        off:            调试两个进程
+        on(default)     调试一个进程(调试哪个取决follow-fork-mode的设置)
+        off             调试两个进程
 
     (2) follow-fork-mode
         parent(default)
@@ -125,17 +109,57 @@
     1    <null>            /home/august/toolchain/gdb/a.out
   * 2    process 3949      /home/august/toolchain/gdb/a.out
 
-
-# gdb debug IPC(unix domain monitor)
+    (gdb) set detach-on-fork off    设置同时调试父子进程
+    (gdb) show detach-on-fork
+    Whether gdb will detach the child of a fork is off.
+    (gdb) show follow-fork-mode
+    Debugger response to a program call of fork or vfork is "parent".
+    (gdb) n
+    [New inferior 2 (process 3520)]
+    Reading symbols from /home/august/toolchain/gdb/a.out...
+    Reading symbols from /usr/lib/debug/lib/aarch64-linux-gnu/libc-2.31.so...
+    (gdb) i inferiors
+    Num  Description       Executable
+  * 1    process 3516      /home/august/toolchain/gdb/a.out
+    2    process 3520      /home/august/toolchain/gdb/a.out
 
 
 # gdb debug MultiThread
     $ gcc -g multipthread.c -pthread
     $ gdb ./a.out
-    (gdb) i(nfo) thread 查看线程数
-    (gdb) thread 2      切换到线程2
-    (gdb) set scheduler-locking on  锁住调度器, off放开
-    (gdb) c(continue)   另一个线程会停住
+    (gdb) i(nfo) thread             查看线程
+    (gdb) thread 2                  切换到线程2
+    (gdb) thread apply all bt       查看所有线程backtrace
+    (gdb) thread apply n bt         查看线程n的backtrace
+
+    (gdb) i(nfo) b(reakpoint)       查看断点
+    (gdb) b(reakpoint) n            默认针对所有线程设置断点
+    (gdb) b(reakpoint) n thread m   只针对线程m设置断点
+    (gdb) d(elete) n                删除断点
+
+    (gdb) set scheduler-locking on  锁住调度器, off放开. 
+    (gdb) c(continue)               只会让一个线程运行, 另外的线程会锁住.
+
+
+# coredump
+    i.   $ ulimit -c unlimited   不限制core文件大小, 只会在在当前shell中生效.
+    ii.  # echo "kernel.core_pattern = /var/crash/core-%e-%p-%s" >> /etc/sysctl.conf
+            %e  添加导致产生core的命令名
+            %p  添加pid
+            %t  添加core文件生成时间
+    iii. # sysctl -p
+    iv.  关闭ubuntu apport.service服务
+         /etc/default/apport文件, enabled设置为0.
+
+    e.g.
+    $ gcc -g multithread.c -pthread
+    $ sudo gdb ./a.out -c /var/crash/coredump/core-a.out-4305-1608812308
+    (gdb) thread apply all bt
+
+## minicoredumper
+    i.  # install minicoredumper
+        /etc/minicoredumper/minicoredumper.cfg.json     配置文件
+    ii. # echo '|usr/sbin/minicoredumper %P %u %s %t %h %e' | tee /proc/sys/kernel/core_pattern
 
 
 # gdb + qemu调试内核
@@ -144,7 +168,7 @@
     (gdb) gdb-multiarch vmlinux
 
 
-# with LD\_PRELOAD
+# with `LD_PRELOAD`
     e.g.
     (gdb) set environment LD_PRELOAD ./lsan-helper.so
     (gdb) file a.out
