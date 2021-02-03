@@ -118,56 +118,22 @@ PART2: Plugin
 
 ## cscope
     0) INSTALL cscope
+
     1) cd src; cscope-indexer -r
+
     2) cscope find用法:
     :cs f(ind) s|g|d|c|t|e|f|i name 
-<table>
-	<tr>
-		<th>command</th>
-		<th>说明</th>
-		<th>快捷键</th>
-	</tr>
-	<tr>
-		<th>0 或 s</th>
-		<th>查找符号</th>
-		<th>ctrl-\ s</th>
-	</tr>
-	<tr>
-		<th>1 或 g</th>
-		<th>查找全局的定义</th>
-		<th>ctrl-\ g</th>
-	</tr>
-	<tr>
-		<th>2 或 d</th>
-		<th>查看指定函数调用了哪些函数</th>
-		<th>ctrl-\ d</th>
-	</tr>
-	<tr>
-		<th>3 或 c</th>
-		<th>查看指定函数被哪些函数所调用</th>
-		<th>ctrl-\ c</th>
-	</tr>
-	<tr>
-		<th>4 或 t</th>
-		<th>查找字符串</th>
-		<th>ctrl-\ t</th>
-	</tr>
-	<tr>
-		<th>6 或 e</th>
-		<th>查找正则表达式</th>
-		<th>ctrl-\ e</th>
-	</tr>
-	<tr>
-		<th>7 或 f</th>
-		<th>查找文件</th>
-		<th>ctrl-\ f</th>
-	</tr>
-	<tr>
-		<th>8 或 i</th>
-		<th>查看指定的文件被哪些文件include</th>
-		<th>ctrl-\ i</th>
-	</tr>
-</table>
+    |command    |说明                               |快捷键     |
+    |:----------|:----------------------------------|:----------|
+    |s          |查找符号                           |ctrl-\ s   |
+    |g          |查找全局的定义                     |ctrl-\ g   |
+    |d          |查看指定函数调用了哪些函数         |ctrl-\ d   |      
+    |c          |查看指定函数被哪些函数所调用       |ctrl-\ c   |
+    |t          |查找字符串                         |ctrl-\ t   |
+    |e          |查找正则表达式(egrep模式)          |ctrl-\ e   |
+    |f          |查找文件                           |ctrl-\ f   |
+    |i          |查看指定的文件被哪些文件include    |ctrl-\ i   |
 
-    5) ctrl+o  回到上次位置
-    6) ctrl+i  前进
+    3) ctrl+o  回到上次位置
+
+    4) ctrl+i  前进
