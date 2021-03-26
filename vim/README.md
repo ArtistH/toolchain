@@ -108,6 +108,16 @@ PART1: Using
     Ctrl+w, v   --- 垂直分割窗口(:vsplit)
     :qa         --- 关闭所有窗口
 
+## 12. about roll screen
+    Ctrl + f 屏幕向下滚动一屏
+    Ctrl + b 屏幕向上滚动一屏
+
+    Ctrl + e 屏幕向下滚动一行
+    Ctrl + y 屏幕向上滚动一行
+
+    Ctrl + d 屏幕向下滚动半屏
+    Ctrl + u 屏幕向上滚动半屏
+
 
 
 PART2: Plugin
