@@ -44,7 +44,7 @@ set laststatus=2
 Plugin 'scrooloose/nerdtree'
 let NERDTreeWinpos='left'
 let NERDTreeWinSize=30
-map <F2> :NERDTreeToggle<CR>
+map nt :NERDTreeToggle<CR>
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
